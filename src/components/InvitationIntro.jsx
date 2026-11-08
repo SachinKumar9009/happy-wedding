@@ -84,13 +84,13 @@ const InvitationIntro = ({ onOpen }) => {
                 {/* Open Button */}
                 <button
                   onClick={handleOpen}
-                  className="group relative inline-flex items-center justify-center px-8 py-3.5 bg-[#6B0F1A] text-[#FFFaf0] text-sm tracking-widest uppercase rounded-sm overflow-hidden transition-all duration-300 hover:bg-[#4A0E14] active:scale-95"
+                  className="group relative inline-flex items-center justify-center px-8 py-3.5 bg-[#6B0F1A] text-[#FFFaf0] text-sm tracking-widest uppercase rounded-full overflow-hidden transition-all duration-300 hover:bg-[#4A0E14] active:scale-95"
                 >
                   <span className="relative z-10">Open Invitation</span>
                 </button>
 
                 {/* Tiny Odia blessing */}
-                <p className="mt-8 text-[#5C4A3D] text-xs tracking-wide">
+                <p className="mt-8 text-[#5C4A3D] text-md tracking-wide">
                   ଶୁଭ ବିବାହ
                 </p>
               </div>

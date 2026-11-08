@@ -13,10 +13,10 @@ import {
 
 import { weddingData } from "../config/weddingData";
 
-const MusicPlayer = () => {
+const MusicPlayer = ({ isPlaying, setIsPlaying }) => {
   const audioRef = useRef(null);
 
-  const [isPlaying, setIsPlaying] = useState(false);
+  // const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [hasError, setHasError] = useState(false);
 
@@ -37,6 +37,21 @@ const MusicPlayer = () => {
       }
     };
   }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.play().catch((error) => {
+        console.error("Unable to play wedding music:", error);
+        setIsPlaying(false);
+      });
+    } else {
+      audio.pause();
+    }
+  }, [isPlaying, setIsPlaying]);
 
   const togglePlay = async () => {
     const audio = audioRef.current;
@@ -105,13 +120,11 @@ const MusicPlayer = () => {
 
         {/* Play / Pause */}
         <button
-          type="button"
-          onClick={togglePlay}
-          disabled={hasError}
-          aria-label={isPlaying ? "Pause wedding music" : "Play wedding music"}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-[#6B0F1A] text-white transition hover:bg-[#4A0E14] active:scale-95 disabled:cursor-not-allowed disabled:opacity-40"
+          onClick={() => setIsPlaying((prev) => !prev)}
+          aria-label={isPlaying ? "Pause music" : "Play music"}
+          className="p-2.5 rounded-full text-[#6B0F1A] hover:bg-[#6B0F1A]/10 transition-colors"
         >
-          {isPlaying ? <Pause size={18} /> : <Play size={18} />}
+          {isPlaying ? <Pause size={19} /> : <Play size={19} />}
         </button>
 
         {/* Mute / Unmute */}

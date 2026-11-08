@@ -5,27 +5,27 @@ export const weddingData = {
   couple: {
     groom: {
       name: "Happy",
-      fullName: "Happy Pradhan",
+      fullName: "Sandip Pradhan",
       photo: "/images/groom.jpg",
     },
     bride: {
-      name: "Supriya",
-      fullName: "Supriya Pradhan",
+      name: "Demo",
+      fullName: "Demo Sahu",
       photo: "/images/bride.jpg",
     },
-    formalDisplay: "Happy Pradhan weds Supriya Pradhan",
+    formalDisplay: "Happy Pradhan weds Demo Sahu",
   },
 
   // Main Wedding
   wedding: {
-    date: "2027-02-13",          // YYYY-MM-DD format (important for countdown)
-    displayDate: "13 February 2027",
+    date: "2027-07-23",         
+    displayDate: "23 July 2027",
     time: "4:00 PM",
-    day: "Saturday",
+    day: "Friday",
   },
 
   // Language
-  language: "en-odia",            // English primary + some Odia
+  language: "en-odia",
 
   // Events (easy to add / remove / edit)
   events: [
@@ -33,10 +33,10 @@ export const weddingData = {
       id: "haldi",
       name: "Haldi Ceremony",
       nameOdia: "ହଳଦୀ ଉତ୍ସବ",
-      date: "11 February 2027",
+      date: "21 July 2027",
       time: "10:00 AM",
-      venue: "Pradhan Residence, Bhubaneswar",
-      address: "Pradhan Residence, Near XYZ Road, Bhubaneswar, Odisha",
+      venue: "Pradhan Residence, Seepur",
+      address: "Pradhan Residence, Near XYZ Road, Talcher, Odisha",
       description: "Traditional turmeric ceremony filled with laughter, music and blessings from family and friends.",
       mapLink: "https://maps.google.com", // replace later
     },
@@ -44,10 +44,10 @@ export const weddingData = {
       id: "mehendi",
       name: "Mehendi Ceremony",
       nameOdia: "ମେହେନ୍ଦୀ",
-      date: "11 February 2027",
+      date: "21 July 2027",
       time: "4:00 PM",
-      venue: "Pradhan Residence, Bhubaneswar",
-      address: "Pradhan Residence, Near XYZ Road, Bhubaneswar, Odisha",
+      venue: "Pradhan Residence, Seepur",
+      address: "Pradhan Residence, Near XYZ Road, Talcher, Odisha",
       description: "Beautiful mehendi application, songs and joyful celebrations with loved ones.",
       mapLink: "https://maps.google.com",
     },
@@ -55,7 +55,7 @@ export const weddingData = {
       id: "sangeet",
       name: "Sangeet Night",
       nameOdia: "ସଙ୍ଗୀତ ସନ୍ଧ୍ୟା",
-      date: "12 February 2027",
+      date: "22 July 2027",
       time: "7:00 PM",
       venue: "Hotel Crown Palace",
       address: "Plot No. 12, Near Airport Road, Bhubaneswar, Odisha 751003",
@@ -66,7 +66,7 @@ export const weddingData = {
       id: "wedding",
       name: "Wedding Ceremony",
       nameOdia: "ବିବାହ",
-      date: "13 February 2027",
+      date: "23 July 2027",
       time: "4:00 PM",
       venue: "Hotel Crown Palace",
       address: "Plot No. 12, Near Airport Road, Bhubaneswar, Odisha 751003",
@@ -77,7 +77,7 @@ export const weddingData = {
       id: "reception",
       name: "Reception",
       nameOdia: "ରିସେପସନ୍",
-      date: "13 February 2027",
+      date: "23 July 2027",
       time: "8:00 PM",
       venue: "Hotel Crown Palace",
       address: "Plot No. 12, Near Airport Road, Bhubaneswar, Odisha 751003",
@@ -151,16 +151,16 @@ export const weddingData = {
 
   // Family
   family: {
-    groomParents: "Shri Ramesh Pradhan & Smt. Sunita Pradhan",
-    brideParents: "Shri Suresh Pradhan & Smt. Anita Pradhan",
+    groomParents: "Shri Maharga Pradhan & Smt. Mina Pradhan",
+    brideParents: "Shri Demo Sahu & Smt. Demo Sahu",
     message: "With the blessings of our parents and elders, we invite you to share in our joy as we begin this beautiful journey together.",
     messageOdia: "ଆମ ପିତାମାତା ଓ ବଡ଼ମାନଙ୍କ ଆଶୀର୍ବାଦରେ ଆମେ ଆପଣଙ୍କୁ ଏହି ଶୁଭ ଅବସରରେ ସାମିଲ ହେବାକୁ ନିମନ୍ତ୍ରଣ କରୁଛୁ।",
   },
 
   // Site Meta
   meta: {
-    title: "Happy & Priya Wedding | 13 February 2027",
-    description: "You are cordially invited to the wedding of Happy Pradhan and Priya Pradhan on 13 February 2027.",
+    title: "Happy & Demo Wedding | 23 July 2027",
+    description: "You are cordially invited to the wedding of Happy Pradhan and Demo Pradhan on 23 July 2027.",
   },
 
   // Music (we will add the actual file later)

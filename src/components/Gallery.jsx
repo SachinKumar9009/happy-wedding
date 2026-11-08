@@ -1,6 +1,3 @@
-
-// src/components/Gallery.jsx
-
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import {

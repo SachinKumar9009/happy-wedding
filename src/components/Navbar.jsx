@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Music } from "lucide-react";
 import { weddingData } from "../config/weddingData";
 
-const Navbar = () => {
+const Navbar = ({ isPlaying, onToggleMusic }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -70,10 +70,12 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             {/* Music button (placeholder for now) */}
             <button
+              onClick={onToggleMusic}
               className="p-2.5 rounded-full text-[#6B0F1A] hover:bg-[#6B0F1A]/10 transition-colors"
-              aria-label="Toggle music"
+              aria-label={isPlaying ? "Pause wedding music" : "Play wedding music"}
+              title={isPlaying ? "Pause music" : "Play music"}
             >
-              <Music size={18} />
+              {isPlaying ? <Music size={18} /> : <Music size={18} />}
             </button>
 
             {/* Mobile menu button */}

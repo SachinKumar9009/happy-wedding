@@ -1,6 +1,3 @@
-
-// src/components/CoupleSection.jsx
-
 import { motion } from "motion/react";
 import { Heart, Flower2, UserRound } from "lucide-react";
 import { weddingData } from "../config/weddingData";

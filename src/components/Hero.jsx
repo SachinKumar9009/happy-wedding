@@ -142,7 +142,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.7, duration: 0.8 }}
           onClick={scrollToEvents}
-          className="mt-10 inline-flex items-center justify-center gap-3 rounded-sm bg-[#6B0F1A] px-8 py-4 text-sm font-medium tracking-widest text-[#FFFaf0] uppercase transition-all duration-300 hover:bg-[#4A0E14] active:scale-95 shadow-lg shadow-[#6B0F1A]/15"
+          className="mt-10 inline-flex items-center justify-center gap-3 rounded-full bg-[#6B0F1A] px-8 py-3 text-sm font-medium tracking-widest text-[#FFFaf0] uppercase transition-all duration-300 hover:bg-[#4A0E14] active:scale-95 shadow-lg shadow-[#6B0F1A]/15"
         >
           Explore Invitation
           <ChevronDown size={18} />

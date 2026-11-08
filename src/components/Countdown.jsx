@@ -1,6 +1,3 @@
-
-// src/components/Countdown.jsx
-
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Heart, Sparkles } from "lucide-react";
@@ -108,7 +105,7 @@ const Countdown = () => {
           </h2>
 
           <p className="mt-4 text-sm sm:text-base text-[#E8D5A5]">
-            Until Happy & Supriya's Wedding
+            Until Happy & Demo's Wedding
           </p>
         </motion.div>
 
@@ -129,7 +126,7 @@ const Countdown = () => {
             </h3>
 
             <p className="mt-3 text-[#E8D5A5]">
-              Happy & Supriya's special day is here. ଶୁଭ ବିବାହ!
+              Happy & Demo's special day is here. ଶୁଭ ବିବାହ!
             </p>
           </motion.div>
         ) : (

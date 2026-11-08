@@ -1,4 +1,3 @@
-
 import { motion } from "motion/react";
 import {
   Heart,
@@ -142,11 +141,11 @@ ${window.location.href}`;
           <p className="mt-4 flex items-center justify-center gap-2 text-xs text-[#FFFaf0]/70">
             Made with
             <Heart size={13} className="fill-[#C9A227] text-[#C9A227]" />
-            for Happy & Priya
+            for Happy & Demo
           </p>
 
           <p className="mt-3 text-[11px] text-[#FFFaf0]/40">
-            © {new Date().getFullYear()} Happy & Priya. All rights reserved.
+            © {new Date().getFullYear()} Pradhan's. All rights reserved.
           </p>
 
         </div>

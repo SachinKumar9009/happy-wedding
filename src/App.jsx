@@ -14,6 +14,12 @@ import Footer from "./components/Footer";
 function App() {
   const [invitationOpened, setInvitationOpened] = useState(false);
 
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+
+  const handleToggleMusic = () => {
+    setIsMusicPlaying((prev) => !prev);
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFaf0]">
       {/* Opening Invitation */}
@@ -24,7 +30,10 @@ function App() {
       {/* Main Website (appears after opening) */}
       {invitationOpened && (
         <>
-          <Navbar />
+          <Navbar
+            isPlaying={isMusicPlaying}
+            onToggleMusic={handleToggleMusic}
+          />
 
           <main className="pt-20">
             <Hero />
@@ -44,7 +53,10 @@ function App() {
             <Footer />
           </main>
 
-          <MusicPlayer />
+          <MusicPlayer
+            isPlaying={isMusicPlaying}
+            setIsPlaying={setIsMusicPlaying}
+          />
         </>
       )}
     </div>

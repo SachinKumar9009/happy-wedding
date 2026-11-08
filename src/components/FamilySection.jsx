@@ -1,6 +1,3 @@
-
-// src/components/FamilySection.jsx
-
 import { motion } from "motion/react";
 import {
   Heart,
