@@ -4,16 +4,16 @@ export const weddingData = {
   // Couple Details
   couple: {
     groom: {
-      name: "Happy",
-      fullName: "Sandip Pradhan",
+      name: "Rahul",
+      fullName: "Rahul Pandey",
       photo: "/images/groom.jpg",
     },
     bride: {
-      name: "Demo",
-      fullName: "Demo Sahu",
+      name: "Priya",
+      fullName: "Priya Pandey",
       photo: "/images/bride.jpg",
     },
-    formalDisplay: "Happy Pradhan weds Demo Sahu",
+    formalDisplay: "Rahul Pandey weds Priya Pandey",
   },
 
   // Main Wedding
@@ -151,10 +151,11 @@ export const weddingData = {
 
   // Family
   family: {
-    groomParents: "Shri Maharga Pradhan & Smt. Mina Pradhan",
-    brideParents: "Shri Demo Sahu & Smt. Demo Sahu",
+    groomParents: "Shri Suresh Pandey & Smt. Sunita Pandey",
+    brideParents: "Shri Rajesh Pandey & Smt. Kavita Pandey",
     message: "With the blessings of our parents and elders, we invite you to share in our joy as we begin this beautiful journey together.",
     messageOdia: "ଆମ ପିତାମାତା ଓ ବଡ଼ମାନଙ୍କ ଆଶୀର୍ବାଦରେ ଆମେ ଆପଣଙ୍କୁ ଏହି ଶୁଭ ଅବସରରେ ସାମିଲ ହେବାକୁ ନିମନ୍ତ୍ରଣ କରୁଛୁ।",
+    children: "Waiting eagerly: Mohit, Rohan, Basu, Riya & The Entire Pradhan Family",
   },
 
   // Site Meta
