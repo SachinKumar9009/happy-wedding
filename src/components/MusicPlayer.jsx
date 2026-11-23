@@ -295,8 +295,6 @@
 
 
 
-
-
 import { useRef, useState, useEffect } from "react";
 import { motion } from "motion/react";
 import {
@@ -305,7 +303,6 @@ import {
   Pause,
   Volume2,
   VolumeX,
-  Crown,
 } from "lucide-react";
 
 import { weddingData } from "../config/weddingData";
@@ -383,17 +380,17 @@ const MusicPlayer = ({ isPlaying, setIsPlaying }) => {
         onPlay={handlePlay}
       />
 
-      {/* Floating Royal Music Player */}
+      {/* Floating Floral Ivory & Champagne-Gold Music Player */}
       <motion.div
         initial={{ opacity: 0, scale: 0.7, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed bottom-5 right-4 z-[80] flex items-center gap-1.5 rounded-full border border-[#C6A04A]/50 bg-[#102319]/95 p-2 shadow-2xl shadow-black/50 backdrop-blur-xl sm:bottom-7 sm:right-7"
+        className="fixed bottom-5 right-4 z-[80] flex items-center gap-1.5 rounded-full border border-[#D5B66F] bg-gradient-to-r from-[#FFFFFF]/95 via-[#FFFCFA]/95 to-[#F4EFF8]/95 p-2 shadow-[0_14px_34px_-10px_rgba(112,85,143,0.28)] backdrop-blur-xl sm:bottom-7 sm:right-7"
       >
-        {/* Inner Royal Border */}
-        <div className="pointer-events-none absolute inset-[3px] rounded-full border border-[#C6A04A]/15" />
+        {/* Delicate Inner Champagne-Gold & Lavender Ring */}
+        <div className="pointer-events-none absolute inset-[3px] rounded-full border border-[#E6D9EA]" />
 
-        {/* Rotating Music Disc */}
+        {/* Rotating Floral Disc */}
         <motion.div
           animate={{ rotate: isPlaying ? 360 : 0 }}
           transition={{
@@ -401,18 +398,18 @@ const MusicPlayer = ({ isPlaying, setIsPlaying }) => {
             repeat: isPlaying ? Infinity : 0,
             ease: "linear",
           }}
-          className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#C6A04A]/60 bg-[#0D1B16] text-[#E8CA82] shadow-md sm:h-11 sm:w-11"
+          className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D5B66F] bg-gradient-to-b from-[#EDE5F3] to-[#F4EFF8] text-[#70558F] shadow-sm sm:h-11 sm:w-11"
         >
-          <div className="absolute inset-1 rounded-full border border-[#C6A04A]/20" />
+          <div className="absolute inset-1 rounded-full border border-[#E9D7A5]/70" />
 
-          <Music2 size={19} strokeWidth={1.5} />
+          <Music2 size={18} strokeWidth={1.65} />
 
-          {/* Playing Indicator */}
+          {/* Active Playback Blush & Gold Dot */}
           {isPlaying && (
             <motion.span
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full border border-[#102319] bg-[#E8CA82]"
+              className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full border border-[#D5B66F] bg-[#E8B8D0]"
             />
           )}
         </motion.div>
@@ -425,7 +422,7 @@ const MusicPlayer = ({ isPlaying, setIsPlaying }) => {
           disabled={hasError}
           aria-label={isPlaying ? "Pause music" : "Play music"}
           title={isPlaying ? "Pause music" : "Play music"}
-          className="relative flex h-10 w-10 items-center justify-center rounded-full text-[#E8CA82] transition-colors hover:bg-[#C6A04A]/15 disabled:cursor-not-allowed disabled:opacity-40 sm:h-11 sm:w-11"
+          className="relative flex h-10 w-10 items-center justify-center rounded-full text-[#70558F] transition-colors hover:bg-[#EDE5F3]/80 disabled:cursor-not-allowed disabled:opacity-40 sm:h-11 sm:w-11"
         >
           {isPlaying ? (
             <Pause size={19} strokeWidth={2} />
@@ -442,12 +439,12 @@ const MusicPlayer = ({ isPlaying, setIsPlaying }) => {
           disabled={hasError}
           aria-label={isMuted ? "Unmute music" : "Mute music"}
           title={isMuted ? "Unmute music" : "Mute music"}
-          className="relative flex h-10 w-10 items-center justify-center rounded-full text-[#C6A04A] transition-colors hover:bg-[#C6A04A]/15 disabled:cursor-not-allowed disabled:opacity-40 sm:h-11 sm:w-11"
+          className="relative flex h-10 w-10 items-center justify-center rounded-full text-[#B69A54] transition-colors hover:bg-[#EDE5F3]/80 hover:text-[#70558F] disabled:cursor-not-allowed disabled:opacity-40 sm:h-11 sm:w-11"
         >
           {isMuted ? (
-            <VolumeX size={19} strokeWidth={1.7} />
+            <VolumeX size={19} strokeWidth={1.75} />
           ) : (
-            <Volume2 size={19} strokeWidth={1.7} />
+            <Volume2 size={19} strokeWidth={1.75} />
           )}
         </motion.button>
       </motion.div>
@@ -457,7 +454,7 @@ const MusicPlayer = ({ isPlaying, setIsPlaying }) => {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="fixed bottom-20 right-4 z-[80] max-w-[240px] rounded-xl border border-red-400/30 bg-[#102319]/95 px-4 py-3 text-xs text-red-300 shadow-xl backdrop-blur-xl sm:right-7"
+          className="fixed bottom-20 right-4 z-[80] max-w-[240px] rounded-2xl border border-[#DCAAC3] bg-[#FFFCFA]/95 px-4 py-3 text-xs text-[#70558F] shadow-[0_14px_30px_-10px_rgba(112,85,143,0.22)] backdrop-blur-xl sm:right-7"
         >
           Music could not be loaded. Please check your MP3 file.
         </motion.div>

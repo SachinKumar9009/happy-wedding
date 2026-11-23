@@ -598,7 +598,6 @@
 
 
 
-
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import {
@@ -615,10 +614,56 @@ import { weddingData } from "../config/weddingData";
 
 const GoldDivider = () => (
   <div className="flex items-center justify-center gap-3">
-    <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#C6A04A]" />
-    <Flower2 size={17} className="text-[#C6A04A]" />
-    <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#C6A04A]" />
+    <span className="h-px w-12 bg-gradient-to-r from-transparent via-[#E9D7A5] to-[#D5B66F]" />
+    <span className="flex h-7 w-7 items-center justify-center rounded-full border border-[#D5B66F]/65 bg-[#F4EFF8]">
+      <Flower2 size={15} className="text-[#70558F]" />
+    </span>
+    <span className="h-px w-12 bg-gradient-to-l from-transparent via-[#E9D7A5] to-[#D5B66F]" />
   </div>
+);
+
+const CornerFloralAccent = () => (
+  <>
+    <svg
+      viewBox="0 0 170 170"
+      className="pointer-events-none absolute -top-2 -left-2 h-28 w-28 opacity-80 sm:h-36 sm:w-36"
+      aria-hidden="true"
+    >
+      <circle cx="34" cy="34" r="38" fill="#E8B8D0" fillOpacity="0.22" />
+      <circle cx="60" cy="28" r="26" fill="#C5B2DA" fillOpacity="0.22" />
+      <path
+        d="M16 16 C46 30 72 52 94 84"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="40" cy="40" r="9.5" fill="#E8B8D0" fillOpacity="0.8" />
+      <circle cx="50" cy="34" r="6.8" fill="#C5B2DA" fillOpacity="0.78" />
+      <circle cx="34" cy="50" r="6.8" fill="#DCAAC3" fillOpacity="0.75" />
+      <circle cx="40" cy="40" r="2.2" fill="#D5B66F" />
+    </svg>
+
+    <svg
+      viewBox="0 0 170 170"
+      className="pointer-events-none absolute -bottom-2 -right-2 h-28 w-28 -scale-x-100 -scale-y-100 opacity-80 sm:h-36 sm:w-36"
+      aria-hidden="true"
+    >
+      <circle cx="34" cy="34" r="38" fill="#C5B2DA" fillOpacity="0.22" />
+      <circle cx="60" cy="28" r="26" fill="#E8B8D0" fillOpacity="0.22" />
+      <path
+        d="M16 16 C46 30 72 52 94 84"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="40" cy="40" r="9.5" fill="#C5B2DA" fillOpacity="0.8" />
+      <circle cx="50" cy="34" r="6.8" fill="#E8B8D0" fillOpacity="0.78" />
+      <circle cx="34" cy="50" r="6.8" fill="#DCAAC3" fillOpacity="0.75" />
+      <circle cx="40" cy="40" r="2.2" fill="#D5B66F" />
+    </svg>
+  </>
 );
 
 const Gallery = () => {
@@ -695,77 +740,80 @@ const Gallery = () => {
   return (
     <section
       id="gallery"
-      className="relative overflow-hidden border-b border-[#C6A04A]/20 bg-[#0D1B16] px-5 py-20 sm:py-24"
+      className="relative overflow-hidden border-b border-[#E6D9EA] bg-gradient-to-b from-[#F4EFF8] via-[#FFFCFA] to-[#EDE5F3]/75 px-4 py-14 sm:px-6 sm:py-20"
     >
-      {/* Background Decorations */}
+      {/* Lavender & Blush Watercolor Backdrop */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#C6A04A]/10 blur-[100px]" />
-        <div className="absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-[#C6A04A]/10 blur-[100px]" />
+        <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#E8B8D0]/22 blur-[110px]" />
+        <div className="absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-[#C5B2DA]/25 blur-[110px]" />
 
         <div
-          className="absolute inset-0 opacity-[0.035]"
+          className="absolute inset-0 opacity-[0.14]"
           style={{
             backgroundImage:
-              "radial-gradient(circle, #E8CA82 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
+              "radial-gradient(circle, #C5B2DA 1.25px, transparent 1.25px)",
+            backgroundSize: "30px 30px",
           }}
         />
+
+        <div className="absolute inset-3 rounded-3xl border border-[#E6D9EA] sm:inset-7" />
+        <div className="absolute inset-5 rounded-2xl border border-[#D5B66F]/30 sm:inset-10" />
+
+        <CornerFloralAccent />
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl">
-
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-12 text-center"
+          className="mb-10 text-center"
         >
           <GoldDivider />
 
-          <p className="mb-3 mt-6 text-[11px] font-light uppercase tracking-[0.35em] text-[#E8CA82]/80">
+          <p className="mb-3 mt-6 text-[11px] font-medium uppercase tracking-[0.35em] text-[#B69A54]">
             Beautiful Moments, Forever Memories
           </p>
 
-          <h2 className="font-serif text-3xl tracking-wide text-[#E8CA82] sm:text-5xl">
+          <h2 className="font-serif text-3xl font-medium tracking-wide text-[#70558F] sm:text-5xl">
             Our Memories
           </h2>
 
-          <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-[#C6A04A] to-transparent" />
+          <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-[#D5B66F] to-transparent" />
 
-          <p className="mx-auto mt-5 max-w-xl text-sm font-light leading-relaxed text-[#F3E8CF]/75 sm:text-base">
+          <p className="mx-auto mt-5 max-w-xl text-sm font-normal leading-relaxed text-[#51465B] sm:text-base">
             A collection of beautiful moments, happiness,
             love and memories that make life special.
           </p>
 
-          <p className="mt-5 font-serif text-xl tracking-[0.15em] text-[#C6A04A]">
+          <p className="mt-5 font-serif text-xl tracking-[0.15em] text-[#B69A54]">
             ସ୍ମୃତିର କିଛି ମୁହୂର୍ତ୍ତ
           </p>
         </motion.div>
 
-        {/* Photo Count */}
+        {/* Photo Count Pill */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="mb-9 flex items-center justify-center gap-3"
         >
-          <span className="h-px w-8 bg-[#C6A04A]/40" />
+          <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#D5B66F]" />
 
-          <div className="flex items-center gap-2 rounded-full border border-[#C6A04A]/30 bg-[#14251C] px-5 py-2">
-            <Images size={16} className="text-[#E8CA82]" />
-            <span className="text-[10px] font-light uppercase tracking-[0.2em] text-[#F3E8CF]">
+          <div className="flex items-center gap-2 rounded-full border border-[#D5B66F]/70 bg-[#FFFFFF] px-5 py-2 shadow-[0_8px_20px_-10px_rgba(112,85,143,0.18)]">
+            <Images size={16} className="text-[#70558F]" />
+            <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#70558F]">
               {photos.length} Beautiful Memories
             </span>
           </div>
 
-          <span className="h-px w-8 bg-[#C6A04A]/40" />
+          <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#D5B66F]" />
         </motion.div>
 
-        {/* Royal Photo Gallery */}
+        {/* Floral Ivory & Gold Photo Gallery Grid */}
         <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3">
-
           {photos.map((photo, index) => (
             <motion.button
               key={photo.id}
@@ -779,55 +827,54 @@ const Gallery = () => {
               }}
               onClick={() => setSelectedIndex(index)}
               aria-label={`View photo ${index + 1}: ${photo.alt}`}
-              className={`group relative overflow-hidden rounded-xl border border-[#C6A04A]/40 bg-[#14251C] p-1 text-left shadow-xl transition-all duration-500 hover:-translate-y-1 hover:border-[#E8CA82]/80 hover:shadow-[0_10px_30px_rgba(198,160,74,0.15)] ${
+              className={`group relative overflow-hidden rounded-2xl border border-[#E6D9EA] bg-gradient-to-b from-[#FFFFFF] via-[#FFFCFA] to-[#F4EFF8] p-1.5 text-left shadow-[0_14px_32px_-14px_rgba(112,85,143,0.18)] transition-all duration-500 hover:-translate-y-1 hover:border-[#D5B66F] hover:shadow-[0_20px_42px_-14px_rgba(112,85,143,0.24)] ${
                 index === 0 || index === 5
                   ? "row-span-2 aspect-[3/4]"
                   : "aspect-square"
               }`}
             >
               {/* Inner Photo Frame */}
-              <div className="relative h-full w-full overflow-hidden rounded-lg border border-[#C6A04A]/20">
-
+              <div className="relative h-full w-full overflow-hidden rounded-xl border border-[#D5B66F]/35 bg-[#F4EFF8]">
                 <img
                   src={photo.image}
                   alt={photo.alt}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                {/* Image Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B16]/95 via-[#0D1B16]/15 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
+                {/* Soft Lavender-Ivory Scrim for Legible Caption */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#51465B]/80 via-[#70558F]/15 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
 
-                {/* Top Ornament */}
+                {/* Top Ornament on Hover */}
                 <div className="absolute left-3 right-3 top-3 flex items-center justify-between opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <Sparkles size={16} className="text-[#E8CA82]" />
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full border border-[#E9D7A5] bg-[#FFFCFA]/90 shadow-sm">
+                    <Sparkles size={14} className="text-[#70558F]" />
+                  </span>
 
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full border border-[#C6A04A]/60 bg-[#0D1B16]/70">
-                    <Crown size={13} className="text-[#E8CA82]" />
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full border border-[#E9D7A5] bg-[#FFFCFA]/90 shadow-sm">
+                    <Crown size={13} className="text-[#B69A54]" />
                   </div>
                 </div>
 
                 {/* Bottom Details */}
                 <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-3 sm:p-4">
-
                   <div className="min-w-0">
-                    <p className="mb-1 text-[9px] font-light uppercase tracking-[0.2em] text-[#C6A04A]">
+                    <p className="mb-1 text-[9px] font-medium uppercase tracking-[0.2em] text-[#E9D7A5]">
                       Memory {String(index + 1).padStart(2, "0")}
                     </p>
 
-                    <p className="truncate text-[10px] font-light uppercase tracking-[0.12em] text-[#F3E8CF] sm:text-xs">
+                    <p className="truncate text-[10px] font-medium uppercase tracking-[0.12em] text-[#FFFFFF] sm:text-xs">
                       {photo.category}
                     </p>
                   </div>
 
-                  <div className="ml-2 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#C6A04A]/50 bg-[#14251C]/90 text-[#E8CA82] transition-all duration-300 group-hover:bg-[#C6A04A] group-hover:text-[#102319]">
-                    <Heart size={15} className="fill-current" />
+                  <div className="ml-2 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E9D7A5] bg-[#FFFCFA]/95 text-[#70558F] shadow-sm transition-all duration-300 group-hover:bg-[#EDE5F3] group-hover:scale-105">
+                    <Heart size={15} className="fill-[#E8B8D0] text-[#70558F]" />
                   </div>
                 </div>
               </div>
             </motion.button>
           ))}
-
         </div>
 
         {/* Bottom Message */}
@@ -844,21 +891,20 @@ const Gallery = () => {
 
           <Heart
             size={22}
-            className="mx-auto mb-4 fill-[#C6A04A]/20 text-[#C6A04A]"
+            className="mx-auto mb-4 fill-[#E8B8D0]/65 text-[#70558F]"
           />
 
-          <p className="font-serif text-lg tracking-wide text-[#F3E8CF] sm:text-xl">
+          <p className="font-serif text-lg tracking-wide text-[#70558F] sm:text-xl">
             Every picture tells a beautiful story.
           </p>
 
-          <p className="mt-3 text-sm font-light text-[#C6A04A]/80">
+          <p className="mt-2.5 text-sm font-normal text-[#82758A]">
             Moments may pass, but memories stay forever.
           </p>
         </motion.div>
-
       </div>
 
-      {/* Full-Screen Royal Lightbox */}
+      {/* Full-Screen Lightbox */}
       <AnimatePresence>
         {isLightboxOpen && (
           <motion.div
@@ -869,7 +915,7 @@ const Gallery = () => {
             onClick={closeLightbox}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#08120E]/95 p-4 backdrop-blur-xl"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#51465B]/75 p-4 backdrop-blur-xl"
             role="dialog"
             aria-modal="true"
             aria-label="Wedding photo viewer"
@@ -879,9 +925,9 @@ const Gallery = () => {
               type="button"
               onClick={closeLightbox}
               aria-label="Close gallery"
-              className="absolute right-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-[#C6A04A]/50 bg-[#14251C]/90 text-[#E8CA82] transition-all duration-300 hover:rotate-90 hover:bg-[#C6A04A]/20 sm:right-7 sm:top-7"
+              className="absolute right-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-[#D5B66F] bg-[#FFFCFA] text-[#70558F] shadow-lg transition-all duration-300 hover:rotate-90 hover:bg-[#F4EFF8] sm:right-7 sm:top-7"
             >
-              <X size={23} />
+              <X size={22} />
             </button>
 
             {/* Previous Button */}
@@ -893,9 +939,9 @@ const Gallery = () => {
                   showPrevious();
                 }}
                 aria-label="Previous photo"
-                className="absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#C6A04A]/50 bg-[#14251C]/90 text-[#E8CA82] transition-all duration-300 hover:bg-[#C6A04A]/20 sm:left-5 sm:h-12 sm:w-12"
+                className="absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#D5B66F] bg-[#FFFCFA] text-[#70558F] shadow-lg transition-all duration-300 hover:bg-[#F4EFF8] sm:left-5 sm:h-12 sm:w-12"
               >
-                <ChevronLeft size={25} />
+                <ChevronLeft size={24} />
               </button>
             )}
 
@@ -910,9 +956,9 @@ const Gallery = () => {
                 onClick={(event) => event.stopPropagation()}
                 className="flex max-h-[85vh] max-w-5xl flex-col items-center"
               >
-                {/* Decorative Image Frame */}
-                <div className="rounded-xl border border-[#C6A04A]/60 bg-[#14251C] p-2 shadow-[0_0_50px_rgba(198,160,74,0.12)] sm:p-3">
-                  <div className="overflow-hidden rounded-lg border border-[#C6A04A]/25">
+                {/* Ivory & Champagne-Gold Lightbox Frame */}
+                <div className="rounded-2xl border border-[#D5B66F] bg-gradient-to-b from-[#FFFFFF] via-[#FFFCFA] to-[#F4EFF8] p-2.5 shadow-[0_24px_60px_-15px_rgba(81,70,91,0.45)] sm:p-3.5">
+                  <div className="overflow-hidden rounded-xl border border-[#E6D9EA]">
                     <img
                       src={photos[selectedIndex].image}
                       alt={photos[selectedIndex].alt}
@@ -922,18 +968,18 @@ const Gallery = () => {
                 </div>
 
                 {/* Image Caption */}
-                <div className="mt-5 text-center">
-                  <div className="mb-3 flex items-center justify-center gap-2">
-                    <span className="h-px w-7 bg-[#C6A04A]/60" />
-                    <Flower2 size={15} className="text-[#C6A04A]" />
-                    <span className="h-px w-7 bg-[#C6A04A]/60" />
+                <div className="mt-5 rounded-2xl border border-[#E6D9EA] bg-[#FFFCFA]/95 px-6 py-3.5 text-center shadow-md">
+                  <div className="mb-2 flex items-center justify-center gap-2">
+                    <span className="h-px w-7 bg-gradient-to-r from-transparent to-[#D5B66F]" />
+                    <Flower2 size={15} className="text-[#70558F]" />
+                    <span className="h-px w-7 bg-gradient-to-l from-transparent to-[#D5B66F]" />
                   </div>
 
-                  <p className="text-xs font-light uppercase tracking-[0.25em] text-[#E8CA82]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#70558F]">
                     {photos[selectedIndex].category}
                   </p>
 
-                  <p className="mt-2 text-[11px] font-light tracking-widest text-[#C6A04A]/70">
+                  <p className="mt-1.5 text-[11px] font-normal tracking-widest text-[#82758A]">
                     {String(selectedIndex + 1).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}
                   </p>
                 </div>
@@ -949,12 +995,11 @@ const Gallery = () => {
                   showNext();
                 }}
                 aria-label="Next photo"
-                className="absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#C6A04A]/50 bg-[#14251C]/90 text-[#E8CA82] transition-all duration-300 hover:bg-[#C6A04A]/20 sm:right-5 sm:h-12 sm:w-12"
+                className="absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#D5B66F] bg-[#FFFCFA] text-[#70558F] shadow-lg transition-all duration-300 hover:bg-[#F4EFF8] sm:right-5 sm:h-12 sm:w-12"
               >
-                <ChevronRight size={25} />
+                <ChevronRight size={24} />
               </button>
             )}
-
           </motion.div>
         )}
       </AnimatePresence>

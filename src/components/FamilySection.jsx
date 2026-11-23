@@ -496,9 +496,6 @@
 
 
 
-
-
-
 import { motion } from "motion/react";
 import {
   Heart,
@@ -513,11 +510,57 @@ import {
 import { weddingData } from "../config/weddingData";
 
 const GoldDivider = ({ icon: Icon = Flower2 }) => (
-  <div className="flex items-center justify-center gap-3 text-[#C6A04A]">
-    <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#C6A04A]/70" />
-    <Icon size={18} strokeWidth={1.4} />
-    <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#C6A04A]/70" />
+  <div className="flex items-center justify-center gap-3 text-[#B69A54]">
+    <span className="h-px w-12 bg-gradient-to-r from-transparent via-[#E9D7A5] to-[#D5B66F]" />
+    <span className="flex h-7 w-7 items-center justify-center rounded-full border border-[#D5B66F]/70 bg-[#F4EFF8] text-[#70558F]">
+      <Icon size={16} strokeWidth={1.5} />
+    </span>
+    <span className="h-px w-12 bg-gradient-to-l from-transparent via-[#E9D7A5] to-[#D5B66F]" />
   </div>
+);
+
+const CornerFloralSprigs = () => (
+  <>
+    <svg
+      viewBox="0 0 175 175"
+      className="pointer-events-none absolute -top-2 -left-2 h-28 w-28 opacity-85 sm:h-36 sm:w-36"
+      aria-hidden="true"
+    >
+      <circle cx="34" cy="34" r="38" fill="#E8B8D0" fillOpacity="0.22" />
+      <circle cx="62" cy="28" r="26" fill="#C5B2DA" fillOpacity="0.22" />
+      <path
+        d="M16 16 C46 30 72 52 94 84"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="40" cy="40" r="9.5" fill="#E8B8D0" fillOpacity="0.82" />
+      <circle cx="50" cy="34" r="6.8" fill="#C5B2DA" fillOpacity="0.78" />
+      <circle cx="34" cy="50" r="6.8" fill="#DCAAC3" fillOpacity="0.75" />
+      <circle cx="40" cy="40" r="2.2" fill="#D5B66F" />
+    </svg>
+
+    <svg
+      viewBox="0 0 175 175"
+      className="pointer-events-none absolute -bottom-2 -right-2 h-28 w-28 -scale-x-100 -scale-y-100 opacity-85 sm:h-36 sm:w-36"
+      aria-hidden="true"
+    >
+      <circle cx="34" cy="34" r="38" fill="#C5B2DA" fillOpacity="0.22" />
+      <circle cx="62" cy="28" r="26" fill="#E8B8D0" fillOpacity="0.22" />
+      <path
+        d="M16 16 C46 30 72 52 94 84"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="40" cy="40" r="9.5" fill="#C5B2DA" fillOpacity="0.82" />
+      <circle cx="50" cy="34" r="6.8" fill="#E8B8D0" fillOpacity="0.78" />
+      <circle cx="34" cy="50" r="6.8" fill="#DCAAC3" fillOpacity="0.75" />
+      <circle cx="40" cy="40" r="2.2" fill="#D5B66F" />
+    </svg>
+  </>
 );
 
 const FamilySection = () => {
@@ -553,44 +596,50 @@ const FamilySection = () => {
   return (
     <section
       id="family"
-      className="relative isolate overflow-hidden border-b border-[#C6A04A]/20 bg-[#0D1B16] px-5 py-20 sm:py-24"
+      className="relative isolate overflow-hidden border-b border-[#E6D9EA] bg-gradient-to-b from-[#FFFCFA] via-[#FFFFFF] to-[#F4EFF8] px-4 py-14 sm:px-6 sm:py-20"
     >
-      {/* Royal Background Decorations */}
+      {/* Lavender, Lilac & Blush Watercolor Backdrop */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-32 top-10 h-80 w-80 rounded-full bg-[#C6A04A]/10 blur-[110px]" />
-        <div className="absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-[#C6A04A]/10 blur-[110px]" />
+        <div className="absolute -left-32 top-10 h-80 w-80 rounded-full bg-[#C5B2DA]/24 blur-[110px]" />
+        <div className="absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-[#E8B8D0]/22 blur-[110px]" />
 
         <div
-          className="absolute inset-0 opacity-[0.035]"
+          className="absolute inset-0 opacity-[0.14]"
           style={{
             backgroundImage:
-              "radial-gradient(#E8CA82 0.8px, transparent 0.8px)",
-            backgroundSize: "25px 25px",
+              "radial-gradient(#C5B2DA 1px, transparent 1px)",
+            backgroundSize: "26px 26px",
           }}
         />
+
+        <div className="absolute inset-3 rounded-3xl border border-[#E6D9EA] sm:inset-7" />
+        <div className="absolute inset-5 rounded-2xl border border-[#D5B66F]/30 sm:inset-10" />
+
+        <CornerFloralSprigs />
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl">
-
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-14 text-center"
+          className="mb-10 text-center"
         >
-          <div className="mb-5 flex items-center justify-center gap-3 text-[#C6A04A]">
-            <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#C6A04A]" />
-            <Flower2 size={23} strokeWidth={1.3} />
-            <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#C6A04A]" />
+          <div className="mb-5 flex items-center justify-center gap-3 text-[#D5B66F]">
+            <span className="h-px w-12 bg-gradient-to-r from-transparent via-[#E9D7A5] to-[#D5B66F]" />
+            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#D5B66F] bg-[#FFFFFF] text-[#70558F] shadow-[0_8px_20px_-8px_rgba(112,85,143,0.2)]">
+              <Flower2 size={22} strokeWidth={1.4} />
+            </span>
+            <span className="h-px w-12 bg-gradient-to-l from-transparent via-[#E9D7A5] to-[#D5B66F]" />
           </div>
 
-          <p className="mb-3 text-xs font-light uppercase tracking-[0.3em] text-[#E8CA82]/80">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-[#B69A54]">
             Two Families, One Celebration
           </p>
 
-          <h2 className="font-serif text-3xl tracking-wide text-[#E8CA82] sm:text-5xl">
+          <h2 className="font-serif text-3xl font-medium tracking-wide text-[#70558F] sm:text-5xl">
             Our Loving Families
           </h2>
 
@@ -598,7 +647,7 @@ const FamilySection = () => {
             <GoldDivider />
           </div>
 
-          <p className="mx-auto max-w-xl text-sm font-light leading-relaxed text-[#F3E8CF]/80 sm:text-base">
+          <p className="mx-auto max-w-xl text-sm font-normal leading-relaxed text-[#51465B] sm:text-base">
             With the blessings of our beloved parents and
             elders, we joyfully invite you to celebrate this
             beautiful union.
@@ -606,7 +655,7 @@ const FamilySection = () => {
 
           <p
             lang="or"
-            className="mt-5 text-xl font-light tracking-widest text-[#E8CA82]"
+            className="mt-5 font-serif text-xl font-normal tracking-widest text-[#B69A54]"
           >
             ଆଶୀର୍ବାଦ ଓ ଶୁଭେଚ୍ଛା
           </p>
@@ -624,48 +673,48 @@ const FamilySection = () => {
                 duration: 0.7,
                 delay: index * 0.15,
               }}
-              className="group relative overflow-hidden rounded-2xl border border-[#C6A04A]/30 bg-[#14251C]/90 px-6 py-10 text-center shadow-2xl shadow-black/30 backdrop-blur-md sm:px-9 sm:py-12"
+              className="group relative overflow-hidden rounded-3xl border border-[#E6D9EA] bg-gradient-to-b from-[#FFFFFF] via-[#FFFCFA] to-[#F4EFF8] px-6 py-8 text-center shadow-[0_18px_40px_-18px_rgba(112,85,143,0.18)] backdrop-blur-md transition-all duration-300 hover:border-[#D5B66F] sm:px-9 sm:py-12"
             >
-              {/* Double Border */}
-              <div className="pointer-events-none absolute inset-2 rounded-xl border border-[#C6A04A]/15" />
+              {/* Delicate Inner Border */}
+              <div className="pointer-events-none absolute inset-2.5 rounded-2xl border border-[#D5B66F]/30" />
 
-              {/* Top Gold Accent */}
-              <div className="absolute left-0 top-0 h-[2px] w-full bg-gradient-to-r from-transparent via-[#E8CA82] to-transparent" />
+              {/* Top Champagne-Gold Accent */}
+              <div className="absolute left-0 top-0 h-[2px] w-full bg-gradient-to-r from-transparent via-[#D5B66F] to-transparent" />
 
-              {/* Corner Decorations */}
+              {/* Corner Floral Accents */}
               <Flower
-                size={22}
-                className="absolute left-5 top-5 text-[#C6A04A]/35"
+                size={20}
+                className="absolute left-5 top-5 text-[#A58AC5]/45"
               />
               <Flower
-                size={22}
-                className="absolute right-5 top-5 text-[#C6A04A]/35"
+                size={20}
+                className="absolute right-5 top-5 text-[#E8B8D0]/70"
               />
               <Flower
-                size={22}
-                className="absolute bottom-5 left-5 rotate-180 text-[#C6A04A]/25"
+                size={20}
+                className="absolute bottom-5 left-5 rotate-180 text-[#E8B8D0]/65"
               />
               <Flower
-                size={22}
-                className="absolute bottom-5 right-5 rotate-180 text-[#C6A04A]/25"
+                size={20}
+                className="absolute bottom-5 right-5 rotate-180 text-[#A58AC5]/45"
               />
 
-              {/* Family Icon */}
-              <div className="relative mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-[#C6A04A]/50 bg-[#0D1B16] shadow-lg shadow-black/30 transition-transform duration-500 group-hover:scale-105">
-                <div className="absolute inset-1 rounded-full border border-[#C6A04A]/20" />
+              {/* Family Emblem */}
+              <div className="relative mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-[#D5B66F] bg-[#FFFFFF] shadow-[0_10px_24px_-8px_rgba(112,85,143,0.2)] transition-transform duration-500 group-hover:scale-105">
+                <div className="absolute inset-1 rounded-full border border-[#E6D9EA] bg-[#F4EFF8]/50" />
                 <Users
-                  size={33}
-                  strokeWidth={1.3}
-                  className="text-[#E8CA82]"
+                  size={30}
+                  strokeWidth={1.4}
+                  className="relative z-10 text-[#70558F]"
                 />
               </div>
 
               {/* Family Information */}
-              <p className="mb-2 text-xs font-light uppercase tracking-[0.25em] text-[#E8CA82]/75">
+              <p className="mb-2 text-xs font-medium uppercase tracking-[0.25em] text-[#B69A54]">
                 {family.subtitle}
               </p>
 
-              <h3 className="font-serif text-2xl tracking-wide text-[#E8CA82] sm:text-3xl">
+              <h3 className="font-serif text-2xl font-semibold tracking-wide text-[#70558F] sm:text-3xl">
                 {family.title}
               </h3>
 
@@ -673,51 +722,51 @@ const FamilySection = () => {
                 <GoldDivider icon={Heart} />
               </div>
 
-              <p className="mb-4 font-serif text-lg text-[#F3E8CF] sm:text-xl">
+              <p className="mb-4 font-serif text-lg font-medium text-[#51465B] sm:text-xl">
                 {family.person}
               </p>
 
               {/* Parents */}
-              <p className="mb-3 text-[11px] font-light uppercase tracking-[0.25em] text-[#C6A04A]/80">
+              <p className="mb-2.5 text-[11px] font-medium uppercase tracking-[0.25em] text-[#82758A]">
                 Beloved Parents
               </p>
 
-              <p className="mx-auto max-w-sm text-sm font-light leading-7 text-[#F3E8CF]/80 sm:text-base">
+              <p className="mx-auto max-w-sm text-sm font-normal leading-7 text-[#51465B] sm:text-base">
                 {family.parents}
               </p>
 
               {/* Blessings */}
-              <div className="mt-8 flex items-center justify-center gap-2 text-[#C6A04A]">
-                <Flower2 size={17} />
-                <span className="text-[10px] font-light tracking-[0.25em] text-[#E8CA82]">
+              <div className="mt-8 flex items-center justify-center gap-2 text-[#B69A54]">
+                <Flower2 size={17} className="text-[#A58AC5]" />
+                <span className="text-[10px] font-medium tracking-[0.25em] text-[#82758A]">
                   WITH BLESSINGS
                 </span>
-                <Flower2 size={17} />
+                <Flower2 size={17} className="text-[#E8B8D0]" />
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* Children / Young Family Members */}
-        {children && (
+        {/* {children && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative mt-8 overflow-hidden rounded-2xl border border-[#C6A04A]/30 bg-[#14251C]/90 px-6 py-9 text-center shadow-xl shadow-black/20 backdrop-blur-md sm:px-10"
+            className="relative mt-8 overflow-hidden rounded-3xl border border-[#E6D9EA] bg-gradient-to-br from-[#FFFFFF] via-[#FFFCFA] to-[#F4EFF8] px-6 py-9 text-center shadow-[0_16px_36px_-18px_rgba(112,85,143,0.18)] backdrop-blur-md sm:px-10"
           >
-            <div className="pointer-events-none absolute inset-2 rounded-xl border border-[#C6A04A]/15" />
+            <div className="pointer-events-none absolute inset-2.5 rounded-2xl border border-[#D5B66F]/30" />
 
-            <div className="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-[#C6A04A]/40 bg-[#0D1B16] text-[#E8CA82]">
-              <Smile size={28} strokeWidth={1.4} />
+            <div className="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-[#D5B66F] bg-[#FFFFFF] text-[#70558F] shadow-sm">
+              <Smile size={26} strokeWidth={1.45} />
             </div>
 
-            <p className="mb-2 text-xs font-light uppercase tracking-[0.25em] text-[#E8CA82]/75">
+            <p className="mb-2 text-xs font-medium uppercase tracking-[0.25em] text-[#B69A54]">
               Eagerly Waiting
             </p>
 
-            <h4 className="mb-4 font-serif text-2xl tracking-wide text-[#E8CA82]">
+            <h4 className="mb-4 font-serif text-2xl font-semibold tracking-wide text-[#70558F]">
               Waiting with Excitement
             </h4>
 
@@ -725,11 +774,11 @@ const FamilySection = () => {
               <GoldDivider icon={Flower} />
             </div>
 
-            <p className="mx-auto max-w-lg text-sm font-light leading-relaxed text-[#F3E8CF]/90 sm:text-base">
+            <p className="mx-auto max-w-lg text-sm font-normal leading-relaxed text-[#51465B] sm:text-base">
               {children}
             </p>
           </motion.div>
-        )}
+        )} */}
 
         {/* Family Invitation Message */}
         <motion.div
@@ -737,27 +786,25 @@ const FamilySection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative mt-8 overflow-hidden rounded-2xl border border-[#C6A04A]/35 bg-gradient-to-br from-[#1C3525] via-[#14251C] to-[#102319] px-6 py-12 text-center shadow-2xl shadow-black/30 sm:px-12 sm:py-16"
+          className="relative mt-8 overflow-hidden rounded-3xl border border-[#E6D9EA] bg-gradient-to-br from-[#FFFFFF] via-[#F4EFF8]/85 to-[#EDE5F3] px-6 py-8 text-center shadow-[0_20px_48px_-18px_rgba(112,85,143,0.2)] sm:px-12 sm:py-12"
         >
-          {/* Inner Border */}
-          <div className="pointer-events-none absolute inset-2 rounded-xl border border-[#C6A04A]/20" />
+          {/* Inner Champagne-Gold Border */}
+          <div className="pointer-events-none absolute inset-2.5 rounded-2xl border border-[#D5B66F]/35" />
 
-          {/* Ambient Decoration */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#C6A04A]/10 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-[#C6A04A]/10 blur-3xl" />
+          {/* Soft Watercolor Ambient Blooms */}
+          <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#E8B8D0]/25 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-[#C5B2DA]/30 blur-3xl" />
 
           <div className="relative z-10">
-            <Crown
-              size={30}
-              strokeWidth={1.3}
-              className="mx-auto mb-5 text-[#E8CA82]"
-            />
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-[#D5B66F] bg-[#FFFFFF] text-[#70558F] shadow-sm">
+              <Crown size={26} strokeWidth={1.35} />
+            </div>
 
-            <p className="mb-4 text-xs font-light uppercase tracking-[0.3em] text-[#E8CA82]/80">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-[#B69A54]">
               A Heartfelt Invitation
             </p>
 
-            <h3 className="mb-6 font-serif text-2xl tracking-wide text-[#E8CA82] sm:text-3xl">
+            <h3 className="mb-6 font-serif text-2xl font-semibold tracking-wide text-[#70558F] sm:text-3xl">
               Together With Our Families
             </h3>
 
@@ -765,18 +812,22 @@ const FamilySection = () => {
               <GoldDivider icon={Sparkles} />
             </div>
 
-            <p className="mx-auto max-w-2xl text-sm font-light leading-8 text-[#F3E8CF]/90 sm:text-base">
+            <p className="mx-auto max-w-2xl text-sm font-normal leading-8 text-[#51465B] sm:text-base">
               {message}
             </p>
 
             {messageOdia && (
               <p
                 lang="or"
-                className="mx-auto mt-7 max-w-2xl text-base font-light leading-9 tracking-wide text-[#E8CA82] sm:text-lg"
+                className="mx-auto mt-7 max-w-2xl text-base font-normal leading-9 tracking-wide text-[#70558F] sm:text-lg"
               >
                 {messageOdia}
               </p>
             )}
+
+            <p className="mx-auto max-w-2xl text-md font-normal leading-relaxed text-[#51465B] sm:text-base">
+              {children}
+            </p>
 
             <div className="mt-9">
               <GoldDivider icon={Heart} />
@@ -784,7 +835,7 @@ const FamilySection = () => {
 
             <p
               lang="or"
-              className="mt-6 font-serif text-xl font-light tracking-widest text-[#E8CA82]"
+              className="mt-6 font-serif text-xl font-medium tracking-widest text-[#B69A54]"
             >
               ଶୁଭ ବିବାହ
             </p>
@@ -792,12 +843,12 @@ const FamilySection = () => {
         </motion.div>
 
         {/* Bottom Ornament */}
-        <div className="mt-12 flex items-center justify-center gap-3 text-[#C6A04A]/70">
-          <span className="h-px w-16 bg-gradient-to-r from-transparent to-[#C6A04A]/60" />
-          <Flower2 size={18} />
-          <Heart size={14} className="fill-[#C6A04A]/20" />
-          <Flower2 size={18} />
-          <span className="h-px w-16 bg-gradient-to-l from-transparent to-[#C6A04A]/60" />
+        <div className="mt-12 flex items-center justify-center gap-3 text-[#D5B66F]">
+          <span className="h-px w-16 bg-gradient-to-r from-transparent via-[#E9D7A5] to-[#D5B66F]" />
+          <Flower2 size={18} className="text-[#70558F]" />
+          <Heart size={14} className="fill-[#E8B8D0] text-[#70558F]" />
+          <Flower2 size={18} className="text-[#A58AC5]" />
+          <span className="h-px w-16 bg-gradient-to-l from-transparent via-[#E9D7A5] to-[#D5B66F]" />
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
 html {
   scroll-behavior: smooth;
@@ -16,4 +16,144 @@ body {
 
 button {
   cursor: pointer;
+} */
+
+
+
+
+@import "tailwindcss";
+
+@theme {
+  /* Primary Colors */
+  --color-pure-white: #FFFFFF;
+  --color-soft-ivory: #FFFCFA;
+  --color-light-lavender: #F4EFF8;
+  --color-pale-purple: #EDE5F3;
+
+  /* Floral Colors */
+  --color-lavender: #A58AC5;
+  --color-soft-lilac: #C5B2DA;
+  --color-deep-purple: #70558F;
+  --color-blush-pink: #E8B8D0;
+  --color-soft-rose: #DCAAC3;
+
+  /* Decorative Colors */
+  --color-champagne-gold: #D5B66F;
+  --color-light-gold: #E9D7A5;
+  --color-soft-border: #E6D9EA;
+
+  /* Typography Colors */
+  --color-ink-primary: #51465B;
+  --color-ink-secondary: #82758A;
+  --color-ink-heading: #70558F;
+  --color-ink-gold: #B69A54;
+
+  /* Typography Families (Comic Sans) */
+  --font-serif: "Comic Sans MS", "Comic Sans", cursive;
+  --font-sans: "Comic Sans MS", "Comic Sans", cursive;
+  --font-script: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #FFFCFA;
+    color: #51465B;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    overflow-x: hidden;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #FFFCFA;
+    color: #51465B;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image:
+      radial-gradient(circle at 12% 10%, rgba(165, 138, 197, 0.14) 0%, transparent 42%),
+      radial-gradient(circle at 88% 18%, rgba(232, 184, 208, 0.16) 0%, transparent 40%),
+      radial-gradient(circle at 50% 65%, rgba(237, 229, 243, 0.35) 0%, transparent 55%),
+      linear-gradient(180deg, #FFFCFA 0%, #FFFFFF 45%, #F4EFF8 100%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-wedding-serif {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: #70558F;
+  }
+
+  .font-wedding-script {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: #70558F;
+  }
+
+  button,
+  a[href],
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+  }
+
+  button,
+  a[href] {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background-color: #EDE5F3;
+    color: #70558F;
+  }
+}
+
+@layer components {
+  .invitation-card-surface {
+    background: linear-gradient(165deg, #FFFFFF 0%, #FFFCFA 62%, #F4EFF8 100%);
+    border: 1px solid #E6D9EA;
+    box-shadow:
+      0 18px 45px -18px rgba(112, 85, 143, 0.16),
+      0 4px 14px -4px rgba(213, 182, 111, 0.18),
+      inset 0 0 0 1px rgba(233, 215, 165, 0.45);
+  }
+
+  .gold-hairline-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #E9D7A5 22%,
+      #D5B66F 50%,
+      #E9D7A5 78%,
+      transparent 100%
+    );
+  }
+
+  .gold-frame-ring {
+    border: 1px solid rgba(213, 182, 111, 0.65);
+    box-shadow:
+      0 0 0 5px rgba(255, 252, 250, 0.85),
+      0 0 0 6px rgba(233, 215, 165, 0.55),
+      0 14px 32px -12px rgba(112, 85, 143, 0.2);
+  }
+
+  .floral-wash-panel {
+    background:
+      radial-gradient(ellipse at top left, rgba(232, 184, 208, 0.22), transparent 55%),
+      radial-gradient(ellipse at top right, rgba(165, 138, 197, 0.2), transparent 55%),
+      radial-gradient(ellipse at bottom center, rgba(237, 229, 243, 0.5), transparent 65%),
+      #FFFCFA;
+  }
 }

@@ -138,8 +138,8 @@
 
 
 
-
 import { useState } from "react";
+import { MotionConfig } from "motion/react";
 
 import InvitationIntro from "./components/InvitationIntro";
 import Navbar from "./components/Navbar";
@@ -163,53 +163,60 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-[#0D1B16] text-[#F3E8CF] selection:bg-[#C6A04A] selection:text-[#0D1B16]">
+    <MotionConfig reducedMotion="user">
+      <div className="relative min-h-screen w-full overflow-x-hidden bg-[#FFFCFA] font-sans text-[#51465B] antialiased selection:bg-[#EDE5F3] selection:text-[#70558F]">
+        {/* Soft Watercolor Ambient Wash Layer */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+        >
+          <div className="absolute -top-28 -left-24 h-80 w-80 rounded-full bg-[#E8B8D0]/20 blur-3xl" />
+          <div className="absolute top-24 -right-28 h-96 w-96 rounded-full bg-[#A58AC5]/18 blur-3xl" />
+          <div className="absolute bottom-16 left-1/4 h-80 w-80 rounded-full bg-[#EDE5F3]/55 blur-3xl" />
+        </div>
 
-      {/* Royal Wedding Invitation Intro */}
-      {!invitationOpened && (
-        <InvitationIntro
-          onOpen={() => setInvitationOpened(true)}
-        />
-      )}
+        {/* Wedding Invitation Intro */}
+        {!invitationOpened && (
+          <InvitationIntro onOpen={() => setInvitationOpened(true)} />
+        )}
 
-      {/* Main Wedding Website */}
-      {invitationOpened && (
-        <>
-          {/* Royal Navigation */}
-          <Navbar
-            isPlaying={isMusicPlaying}
-            onToggleMusic={handleToggleMusic}
-          />
+        {/* Main Wedding Website */}
+        {invitationOpened && (
+          <>
+            {/* Navigation */}
+            <Navbar
+              isPlaying={isMusicPlaying}
+              onToggleMusic={handleToggleMusic}
+            />
 
-          {/* Main Sections */}
-          <main className="pt-20">
+            {/* Main Sections */}
+            <main className="relative pt-20 sm:pt-24">
+              <Hero />
 
-            <Hero />
+              <Countdown />
 
-            <Countdown />
+              <CoupleSection />
 
-            <CoupleSection />
+              <EventsSection />
 
-            <EventsSection />
+              <VenueSection />
 
-            <VenueSection />
+              <Gallery />
 
-            <Gallery />
+              <FamilySection />
 
-            <FamilySection />
+              <Footer />
+            </main>
 
-            <Footer />
-
-          </main>
-
-          {/* Single Shared Music Player */}
-          <MusicPlayer
-            isPlaying={isMusicPlaying}
-            setIsPlaying={setIsMusicPlaying}
-          />
-        </>
-      )}
-    </div>
+            {/* Single Shared Music Player */}
+            <MusicPlayer
+              isPlaying={isMusicPlaying}
+              setIsPlaying={setIsMusicPlaying}
+            />
+          </>
+        )}
+      </div>
+    </MotionConfig>
   );
 }
 

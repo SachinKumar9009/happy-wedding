@@ -474,7 +474,6 @@
 
 
 // src/components/VenueSection.jsx
-
 import { motion } from "motion/react";
 import {
   MapPin,
@@ -491,10 +490,56 @@ import { weddingData } from "../config/weddingData";
 
 const GoldDivider = () => (
   <div className="flex items-center justify-center gap-3">
-    <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#C6A04A]" />
-    <Flower2 size={17} className="text-[#C6A04A]" />
-    <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#C6A04A]" />
+    <span className="h-px w-12 bg-gradient-to-r from-transparent via-[#E9D7A5] to-[#D5B66F]" />
+    <span className="flex h-7 w-7 items-center justify-center rounded-full border border-[#D5B66F]/65 bg-[#F4EFF8]">
+      <Flower2 size={15} className="text-[#70558F]" />
+    </span>
+    <span className="h-px w-12 bg-gradient-to-l from-transparent via-[#E9D7A5] to-[#D5B66F]" />
   </div>
+);
+
+const CornerFloralAccent = () => (
+  <>
+    <svg
+      viewBox="0 0 170 170"
+      className="pointer-events-none absolute -top-2 -left-2 h-28 w-28 opacity-80 sm:h-36 sm:w-36"
+      aria-hidden="true"
+    >
+      <circle cx="34" cy="34" r="38" fill="#E8B8D0" fillOpacity="0.22" />
+      <circle cx="60" cy="28" r="26" fill="#C5B2DA" fillOpacity="0.22" />
+      <path
+        d="M16 16 C46 30 72 52 94 84"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="40" cy="40" r="9.5" fill="#E8B8D0" fillOpacity="0.8" />
+      <circle cx="50" cy="34" r="6.8" fill="#C5B2DA" fillOpacity="0.78" />
+      <circle cx="34" cy="50" r="6.8" fill="#DCAAC3" fillOpacity="0.75" />
+      <circle cx="40" cy="40" r="2.2" fill="#D5B66F" />
+    </svg>
+
+    <svg
+      viewBox="0 0 170 170"
+      className="pointer-events-none absolute -bottom-2 -right-2 h-28 w-28 -scale-x-100 -scale-y-100 opacity-80 sm:h-36 sm:w-36"
+      aria-hidden="true"
+    >
+      <circle cx="34" cy="34" r="38" fill="#C5B2DA" fillOpacity="0.22" />
+      <circle cx="60" cy="28" r="26" fill="#E8B8D0" fillOpacity="0.22" />
+      <path
+        d="M16 16 C46 30 72 52 94 84"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="40" cy="40" r="9.5" fill="#C5B2DA" fillOpacity="0.8" />
+      <circle cx="50" cy="34" r="6.8" fill="#E8B8D0" fillOpacity="0.78" />
+      <circle cx="34" cy="50" r="6.8" fill="#DCAAC3" fillOpacity="0.75" />
+      <circle cx="40" cy="40" r="2.2" fill="#D5B66F" />
+    </svg>
+  </>
 );
 
 const VenueSection = () => {
@@ -514,25 +559,29 @@ const VenueSection = () => {
   return (
     <section
       id="venue"
-      className="relative overflow-hidden border-b border-[#C6A04A]/20 bg-[#0D1B16] px-5 py-20 sm:py-24"
+      className="relative overflow-hidden border-b border-[#E6D9EA] bg-gradient-to-b from-[#FFFCFA] via-[#FFFFFF] to-[#F4EFF8] px-4 py-14 sm:px-6 sm:py-20"
     >
-      {/* Background Decorations */}
+      {/* Lavender & Blush Watercolor Backdrop */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#C6A04A]/10 blur-[100px]" />
-        <div className="absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-[#C6A04A]/10 blur-[100px]" />
+        <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#C5B2DA]/22 blur-[110px]" />
+        <div className="absolute -right-32 bottom-10 h-80 w-80 rounded-full bg-[#E8B8D0]/22 blur-[110px]" />
 
         <div
-          className="absolute inset-0 opacity-[0.035]"
+          className="absolute inset-0 opacity-[0.14]"
           style={{
             backgroundImage:
-              "radial-gradient(circle, #E8CA82 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
+              "radial-gradient(circle, #C5B2DA 1.25px, transparent 1.25px)",
+            backgroundSize: "30px 30px",
           }}
         />
+
+        <div className="absolute inset-3 rounded-3xl border border-[#E6D9EA] sm:inset-7" />
+        <div className="absolute inset-5 rounded-2xl border border-[#D5B66F]/30 sm:inset-10" />
+
+        <CornerFloralAccent />
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl">
-
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -543,22 +592,22 @@ const VenueSection = () => {
         >
           <GoldDivider />
 
-          <p className="mb-3 mt-6 text-[11px] font-light uppercase tracking-[0.35em] text-[#E8CA82]/80">
+          <p className="mb-3 mt-6 text-[11px] font-medium uppercase tracking-[0.35em] text-[#B69A54]">
             Join Us at Our Celebration
           </p>
 
-          <h2 className="font-serif text-3xl tracking-wide text-[#E8CA82] sm:text-5xl">
+          <h2 className="font-serif text-3xl font-medium tracking-wide text-[#70558F] sm:text-5xl">
             Wedding Venue
           </h2>
 
-          <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-[#C6A04A] to-transparent" />
+          <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-[#D5B66F] to-transparent" />
 
-          <p className="mx-auto mt-5 max-w-xl text-sm font-light leading-relaxed text-[#F3E8CF]/75 sm:text-base">
+          <p className="mx-auto mt-5 max-w-xl text-sm font-normal leading-relaxed text-[#51465B] sm:text-base">
             We would be delighted to celebrate this special
             occasion with you at our wedding venue.
           </p>
 
-          <p className="mt-5 font-serif text-xl tracking-[0.2em] text-[#C6A04A]">
+          <p className="mt-5 font-serif text-xl tracking-[0.2em] text-[#B69A54]">
             ଆପଣଙ୍କୁ ସ୍ୱାଗତ
           </p>
         </motion.div>
@@ -569,12 +618,10 @@ const VenueSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="overflow-hidden rounded-2xl border border-[#C6A04A]/40 bg-gradient-to-br from-[#1C3525] via-[#14251C] to-[#102319] shadow-2xl shadow-black/40"
+          className="relative overflow-hidden rounded-3xl border border-[#E6D9EA] bg-gradient-to-br from-[#FFFFFF] via-[#FFFCFA] to-[#F4EFF8] shadow-[0_20px_50px_-18px_rgba(112,85,143,0.22)]"
         >
-
-          {/* Venue Image */}
-          <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#1C3525] via-[#102319] to-[#C6A04A]/20 sm:h-96">
-
+          {/* Venue Image Showcase */}
+          <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#EDE5F3] via-[#F4EFF8] to-[#FFFCFA] sm:h-96">
             {venue.image ? (
               <img
                 src={venue.image}
@@ -584,45 +631,45 @@ const VenueSection = () => {
               />
             ) : (
               <div className="flex h-full flex-col items-center justify-center px-5 text-center">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full border border-[#C6A04A]/50 bg-[#C6A04A]/10">
+                <div className="flex h-24 w-24 items-center justify-center rounded-full border border-[#D5B66F] bg-[#FFFFFF] shadow-sm">
                   <MapPinned
-                    size={48}
-                    strokeWidth={1}
-                    className="text-[#E8CA82]"
+                    size={46}
+                    strokeWidth={1.15}
+                    className="text-[#70558F]"
                   />
                 </div>
 
-                <p className="mt-5 font-serif text-3xl text-[#F3E8CF] sm:text-4xl">
+                <p className="mt-5 font-serif text-3xl text-[#70558F] sm:text-4xl">
                   {venue.name}
                 </p>
 
-                <p className="mt-3 text-[10px] font-light uppercase tracking-[0.3em] text-[#C6A04A]">
+                <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.3em] text-[#B69A54]">
                   Wedding Celebration Venue
                 </p>
               </div>
             )}
 
-            {/* Image Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B16] via-[#0D1B16]/30 to-transparent" />
+            {/* Soft Ivory & Lavender Bottom Fade */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#FFFCFA] via-[#FFFCFA]/35 to-transparent" />
 
-            {/* Image Top Ornament */}
-            <div className="absolute left-1/2 top-5 flex -translate-x-1/2 items-center gap-3 text-[#E8CA82]">
-              <span className="h-px w-8 bg-[#C6A04A]/70" />
-              <Crown size={21} />
-              <span className="h-px w-8 bg-[#C6A04A]/70" />
+            {/* Image Top Crown Badge */}
+            <div className="absolute left-1/2 top-5 flex -translate-x-1/2 items-center gap-3 rounded-full border border-[#D5B66F]/75 bg-[#FFFFFF]/90 px-4 py-1.5 backdrop-blur-md shadow-sm">
+              <span className="h-px w-6 bg-gradient-to-r from-transparent to-[#D5B66F]" />
+              <Crown size={18} className="text-[#70558F]" />
+              <span className="h-px w-6 bg-gradient-to-l from-transparent to-[#D5B66F]" />
             </div>
 
-            {/* Venue Name */}
-            <div className="absolute bottom-6 left-5 right-5 text-center sm:bottom-8">
-              <p className="mb-2 text-[10px] font-light uppercase tracking-[0.3em] text-[#E8CA82]/80">
+            {/* Venue Name Overlay */}
+            <div className="absolute bottom-5 left-5 right-5 text-center sm:bottom-7">
+              <p className="mb-1.5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#B69A54]">
                 The Celebration Awaits
               </p>
 
-              <h3 className="font-serif text-2xl tracking-wide text-[#E8CA82] sm:text-4xl">
+              <h3 className="font-serif text-2xl font-semibold tracking-wide text-[#70558F] sm:text-4xl">
                 {venue.name}
               </h3>
 
-              <div className="mt-4">
+              <div className="mt-3">
                 <GoldDivider />
               </div>
             </div>
@@ -630,84 +677,84 @@ const VenueSection = () => {
 
           {/* Venue Information */}
           <div className="grid grid-cols-1 gap-9 p-6 sm:p-9 md:grid-cols-2 md:gap-12">
-
             {/* Location Details */}
             <div>
-              <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#C6A04A]/40 bg-[#0D1B16]">
-                  <MapPin size={21} className="text-[#E8CA82]" />
+              <div className="mb-6 flex items-center gap-3.5">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#D5B66F]/70 bg-[#F4EFF8]">
+                  <MapPin size={21} className="text-[#70558F]" />
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-light uppercase tracking-[0.25em] text-[#C6A04A]/80">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-[#B69A54]">
                     Our Location
                   </p>
 
-                  <h3 className="font-serif text-xl tracking-wide text-[#E8CA82]">
+                  <h3 className="font-serif text-xl font-semibold tracking-wide text-[#70558F]">
                     Find the Venue
                   </h3>
                 </div>
               </div>
 
-              <div className="rounded-xl border border-[#C6A04A]/20 bg-[#0D1B16]/50 p-5">
-                <div className="mb-3 flex items-center gap-2">
-                  <Sparkles size={14} className="text-[#C6A04A]" />
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[#C6A04A]">
+              <div className="rounded-2xl border border-[#E6D9EA] bg-[#FFFFFF]/90 p-5 shadow-[0_10px_25px_-14px_rgba(112,85,143,0.16)]">
+                <div className="mb-2.5 flex items-center gap-2">
+                  <Sparkles size={14} className="text-[#A58AC5]" />
+                  <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#B69A54]">
                     Venue Address
                   </p>
                 </div>
 
-                <p className="text-sm font-light leading-relaxed text-[#F3E8CF]/80">
+                <p className="text-sm font-normal leading-relaxed text-[#51465B]">
                   {venue.address}
                 </p>
               </div>
 
               <button
+                type="button"
                 onClick={openDirections}
-                className="group mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#C6A04A]/70 bg-gradient-to-r from-[#C6A04A] via-[#E8CA82] to-[#C6A04A] px-6 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[#102319] shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(198,160,74,0.3)] active:scale-95"
+                className="group mt-6 inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#D5B66F] bg-gradient-to-b from-[#FFFFFF] via-[#F4EFF8] to-[#EDE5F3] px-6 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[#70558F] shadow-[0_10px_24px_-10px_rgba(112,85,143,0.22),inset_0_0_0_1px_rgba(233,215,165,0.75)] transition-all duration-300 hover:scale-[1.03] hover:border-[#B69A54] active:scale-95"
               >
-                <Navigation size={17} />
+                <Navigation size={16} className="text-[#B69A54]" />
                 Get Directions
                 <Navigation
                   size={14}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
+                  className="text-[#B69A54] transition-transform duration-300 group-hover:translate-x-1"
                 />
               </button>
             </div>
 
             {/* Guest Information */}
             <div>
-              <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#C6A04A]/40 bg-[#0D1B16]">
+              <div className="mb-6 flex items-center gap-3.5">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#D5B66F]/70 bg-[#F4EFF8]">
                   <Heart
-                    size={21}
-                    className="fill-[#C6A04A]/20 text-[#E8CA82]"
+                    size={20}
+                    className="fill-[#E8B8D0]/65 text-[#70558F]"
                   />
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-light uppercase tracking-[0.25em] text-[#C6A04A]/80">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-[#B69A54]">
                     Guest Information
                   </p>
 
-                  <h3 className="font-serif text-xl tracking-wide text-[#E8CA82]">
+                  <h3 className="font-serif text-xl font-semibold tracking-wide text-[#70558F]">
                     Before You Arrive
                   </h3>
                 </div>
               </div>
 
               {/* Parking */}
-              <div className="mb-4 flex items-start gap-4 rounded-xl border border-[#C6A04A]/20 bg-[#0D1B16]/50 p-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#C6A04A]/30 bg-[#C6A04A]/10">
-                  <Car size={19} className="text-[#E8CA82]" />
+              <div className="mb-4 flex items-start gap-4 rounded-2xl border border-[#E6D9EA] bg-[#FFFFFF]/90 p-4 shadow-[0_10px_25px_-14px_rgba(112,85,143,0.16)]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D5B66F]/65 bg-[#F4EFF8]">
+                  <Car size={18} className="text-[#70558F]" />
                 </div>
 
                 <div>
-                  <p className="text-sm font-medium tracking-wide text-[#E8CA82]">
+                  <p className="text-sm font-semibold tracking-wide text-[#70558F]">
                     Parking
                   </p>
 
-                  <p className="mt-2 text-sm font-light leading-relaxed text-[#F3E8CF]/70">
+                  <p className="mt-1.5 text-sm font-normal leading-relaxed text-[#51465B]">
                     {venue.notes?.toLowerCase().includes("parking")
                       ? "Parking information: " + venue.notes
                       : venue.notes || "Please contact the family for parking details."}
@@ -716,30 +763,29 @@ const VenueSection = () => {
               </div>
 
               {/* Dress Code */}
-              <div className="flex items-start gap-4 rounded-xl border border-[#C6A04A]/20 bg-[#0D1B16]/50 p-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#C6A04A]/30 bg-[#C6A04A]/10">
-                  <Shirt size={19} className="text-[#E8CA82]" />
+              <div className="flex items-start gap-4 rounded-2xl border border-[#E6D9EA] bg-[#FFFFFF]/90 p-4 shadow-[0_10px_25px_-14px_rgba(112,85,143,0.16)]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D5B66F]/65 bg-[#F4EFF8]">
+                  <Shirt size={18} className="text-[#70558F]" />
                 </div>
 
                 <div>
-                  <p className="text-sm font-medium tracking-wide text-[#E8CA82]">
+                  <p className="text-sm font-semibold tracking-wide text-[#70558F]">
                     Dress Code
                   </p>
 
-                  <p className="mt-2 text-sm font-light leading-relaxed text-[#F3E8CF]/70">
+                  <p className="mt-1.5 text-sm font-normal leading-relaxed text-[#51465B]">
                     Traditional Indian or formal attire is preferred.
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
 
           {/* Card Bottom Ornament */}
-          <div className="flex items-center justify-center gap-3 border-t border-[#C6A04A]/20 py-5">
-            <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#C6A04A]/60" />
-            <Flower2 size={17} className="text-[#C6A04A]" />
-            <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#C6A04A]/60" />
+          <div className="flex items-center justify-center gap-3 border-t border-[#E6D9EA] bg-[#F4EFF8]/50 py-5">
+            <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#D5B66F]" />
+            <Flower2 size={17} className="text-[#A58AC5]" />
+            <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#D5B66F]" />
           </div>
         </motion.div>
 
@@ -752,23 +798,22 @@ const VenueSection = () => {
           className="mt-14 text-center"
         >
           <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#C6A04A]/70" />
+            <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#D5B66F]" />
             <Heart
               size={20}
-              className="fill-[#C6A04A]/20 text-[#C6A04A]"
+              className="fill-[#E8B8D0]/65 text-[#70558F]"
             />
-            <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#C6A04A]/70" />
+            <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#D5B66F]" />
           </div>
 
-          <p className="font-serif text-lg tracking-wide text-[#F3E8CF] sm:text-xl">
-            We can't wait to welcome you!
+          <p className="font-serif text-lg tracking-wide text-[#70558F] sm:text-xl">
+            We can&apos;t wait to welcome you!
           </p>
 
-          <p className="mt-3 text-sm font-light text-[#C6A04A]/80">
+          <p className="mt-2.5 text-sm font-normal text-[#82758A]">
             Your presence will make our celebration unforgettable.
           </p>
         </motion.div>
-
       </div>
     </section>
   );

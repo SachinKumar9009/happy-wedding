@@ -339,7 +339,6 @@
 
 
 
-
 import { motion } from "motion/react";
 import {
   Heart,
@@ -353,86 +352,189 @@ import { weddingData } from "../config/weddingData";
 
 const GoldDivider = ({ className = "" }) => (
   <div className={`flex items-center justify-center gap-3 ${className}`}>
-    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#C6A04A] to-[#C6A04A]" />
+    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#E9D7A5] to-[#D5B66F]" />
 
-    <svg viewBox="0 0 36 28" className="w-9 h-7 shrink-0">
-      <path
-        d="M18 2 L29 14 L18 26 L7 14 Z"
-        stroke="#C6A04A"
-        strokeWidth="1.3"
-        fill="none"
+    <svg viewBox="0 0 36 28" className="w-8 h-7 shrink-0" aria-hidden="true">
+      <circle
+        cx="18"
+        cy="14"
+        r="7.5"
+        fill="#F4EFF8"
+        stroke="#D5B66F"
+        strokeWidth="1.2"
       />
-      <path
-        d="M18 8 L24 14 L18 20 L12 14 Z"
-        fill="#C6A04A"
-      />
+      <circle cx="18" cy="14" r="2.5" fill="#A58AC5" />
+      <circle cx="8.5" cy="14" r="1.4" fill="#E8B8D0" />
+      <circle cx="27.5" cy="14" r="1.4" fill="#E8B8D0" />
     </svg>
 
-    <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#C6A04A] to-[#C6A04A]" />
+    <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#E9D7A5] to-[#D5B66F]" />
   </div>
 );
 
-const RoyalArch = () => (
+const FloralArchFrame = () => (
   <svg
     viewBox="0 0 500 650"
     className="absolute inset-0 w-full h-full"
     preserveAspectRatio="none"
     fill="none"
+    aria-hidden="true"
   >
-    {/* Main palace arch */}
+    {/* Outer soft lilac-lavender arch */}
     <path
-      d="M12 650 V260 C12 105 105 12 250 12 C395 12 488 105 488 260 V650"
-      stroke="#C6A04A"
-      strokeWidth="2"
-      opacity=".7"
+      d="M14 650 V260 C14 105 106 14 250 14 C394 14 486 105 486 260 V650"
+      stroke="#C5B2DA"
+      strokeWidth="1.4"
+      opacity="0.65"
     />
 
-    {/* Inner arch */}
+    {/* Inner champagne-gold arch */}
     <path
-      d="M25 650 V265 C25 120 112 28 250 28 C388 28 475 120 475 265 V650"
-      stroke="#E8CA82"
-      strokeWidth="0.8"
-      opacity=".45"
+      d="M26 650 V265 C26 122 114 30 250 30 C386 30 474 122 474 265 V650"
+      stroke="#D5B66F"
+      strokeWidth="1.1"
+      opacity="0.7"
     />
 
-    {/* Arch ornament */}
-    <path
-      d="M250 10 Q235 38 210 35 Q230 52 250 72 Q270 52 290 35 Q265 38 250 10Z"
-      stroke="#C6A04A"
-      strokeWidth="1.5"
-    />
+    {/* Top floral crest */}
+    <circle cx="250" cy="30" r="12" fill="#EDE5F3" stroke="#D5B66F" strokeWidth="1.2" />
+    <circle cx="236" cy="34" r="7.5" fill="#E8B8D0" fillOpacity="0.75" />
+    <circle cx="264" cy="34" r="7.5" fill="#C5B2DA" fillOpacity="0.75" />
+    <circle cx="250" cy="30" r="3" fill="#B69A54" />
 
-    <circle cx="250" cy="48" r="5" fill="#C6A04A" />
+    {/* Left & right shoulder floral clusters */}
+    <circle cx="88" cy="88" r="10" fill="#E8B8D0" fillOpacity="0.55" />
+    <circle cx="102" cy="78" r="7" fill="#C5B2DA" fillOpacity="0.6" />
+    <path d="M72 104 Q92 86 116 74" stroke="#A58AC5" strokeWidth="1.2" opacity="0.7" />
 
-    {/* Side decorative motifs */}
-    <path
-      d="M12 270 Q35 240 55 270 Q35 300 12 270Z"
-      stroke="#C6A04A"
-      strokeWidth="1"
-    />
+    <circle cx="412" cy="88" r="10" fill="#C5B2DA" fillOpacity="0.55" />
+    <circle cx="398" cy="78" r="7" fill="#E8B8D0" fillOpacity="0.6" />
+    <path d="M428 104 Q408 86 384 74" stroke="#A58AC5" strokeWidth="1.2" opacity="0.7" />
 
-    <path
-      d="M488 270 Q465 240 445 270 Q465 300 488 270Z"
-      stroke="#C6A04A"
-      strokeWidth="1"
-    />
-
-    {/* Side pillars */}
-    <path d="M12 300 H35 V650 H12" stroke="#C6A04A" opacity=".35" />
-    <path d="M488 300 H465 V650 H488" stroke="#C6A04A" opacity=".35" />
-
-    {/* Top floral decorations */}
-    <path
-      d="M105 75 Q130 40 155 75 Q130 90 105 75Z"
-      stroke="#C6A04A"
-      opacity=".35"
-    />
-    <path
-      d="M395 75 Q370 40 345 75 Q370 90 395 75Z"
-      stroke="#C6A04A"
-      opacity=".35"
-    />
+    {/* Side blush & gold accents */}
+    <circle cx="14" cy="275" r="5" fill="#E8B8D0" stroke="#D5B66F" strokeWidth="1" />
+    <circle cx="486" cy="275" r="5" fill="#C5B2DA" stroke="#D5B66F" strokeWidth="1" />
   </svg>
+);
+
+const CornerFloralSprigs = () => (
+  <>
+    {/* Top-left corner bouquet */}
+    <svg
+      viewBox="0 0 180 180"
+      className="pointer-events-none absolute -top-2 -left-2 w-28 h-28 sm:w-40 sm:h-40 opacity-90"
+      aria-hidden="true"
+    >
+      <circle cx="36" cy="36" r="42" fill="#E8B8D0" fillOpacity="0.22" />
+      <circle cx="64" cy="32" r="30" fill="#C5B2DA" fillOpacity="0.22" />
+      <path
+        d="M16 16 C52 32 82 58 106 94"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+      />
+      <ellipse
+        cx="62"
+        cy="38"
+        rx="12"
+        ry="5.5"
+        transform="rotate(24 62 38)"
+        fill="#C5B2DA"
+        fillOpacity="0.68"
+      />
+      <ellipse
+        cx="38"
+        cy="64"
+        rx="12"
+        ry="5.5"
+        transform="rotate(62 38 64)"
+        fill="#E8B8D0"
+        fillOpacity="0.72"
+      />
+      <circle cx="44" cy="42" r="10" fill="#E8B8D0" fillOpacity="0.82" />
+      <circle cx="54" cy="36" r="7.5" fill="#DCAAC3" fillOpacity="0.78" />
+      <circle cx="36" cy="52" r="7.5" fill="#C5B2DA" fillOpacity="0.78" />
+      <circle cx="44" cy="42" r="2.6" fill="#D5B66F" />
+    </svg>
+
+    {/* Top-right corner bouquet */}
+    <svg
+      viewBox="0 0 180 180"
+      className="pointer-events-none absolute -top-2 -right-2 w-28 h-28 sm:w-40 sm:h-40 opacity-90 -scale-x-100"
+      aria-hidden="true"
+    >
+      <circle cx="36" cy="36" r="42" fill="#C5B2DA" fillOpacity="0.22" />
+      <circle cx="64" cy="32" r="30" fill="#E8B8D0" fillOpacity="0.22" />
+      <path
+        d="M16 16 C52 32 82 58 106 94"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+      />
+      <ellipse
+        cx="62"
+        cy="38"
+        rx="12"
+        ry="5.5"
+        transform="rotate(24 62 38)"
+        fill="#E8B8D0"
+        fillOpacity="0.68"
+      />
+      <ellipse
+        cx="38"
+        cy="64"
+        rx="12"
+        ry="5.5"
+        transform="rotate(62 38 64)"
+        fill="#C5B2DA"
+        fillOpacity="0.72"
+      />
+      <circle cx="44" cy="42" r="10" fill="#C5B2DA" fillOpacity="0.82" />
+      <circle cx="54" cy="36" r="7.5" fill="#E8B8D0" fillOpacity="0.78" />
+      <circle cx="36" cy="52" r="7.5" fill="#DCAAC3" fillOpacity="0.78" />
+      <circle cx="44" cy="42" r="2.6" fill="#D5B66F" />
+    </svg>
+
+    {/* Bottom-left corner bouquet */}
+    <svg
+      viewBox="0 0 160 160"
+      className="pointer-events-none absolute -bottom-2 -left-2 w-24 h-24 sm:w-36 sm:h-36 opacity-85 -scale-y-100"
+      aria-hidden="true"
+    >
+      <circle cx="30" cy="30" r="34" fill="#C5B2DA" fillOpacity="0.22" />
+      <path
+        d="M16 16 C44 28 68 50 88 78"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="38" cy="38" r="9" fill="#C5B2DA" fillOpacity="0.78" />
+      <circle cx="48" cy="32" r="6.5" fill="#E8B8D0" fillOpacity="0.75" />
+      <circle cx="38" cy="38" r="2.2" fill="#D5B66F" />
+    </svg>
+
+    {/* Bottom-right corner bouquet */}
+    <svg
+      viewBox="0 0 160 160"
+      className="pointer-events-none absolute -bottom-2 -right-2 w-24 h-24 sm:w-36 sm:h-36 opacity-85 -scale-x-100 -scale-y-100"
+      aria-hidden="true"
+    >
+      <circle cx="30" cy="30" r="34" fill="#E8B8D0" fillOpacity="0.22" />
+      <path
+        d="M16 16 C44 28 68 50 88 78"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="38" cy="38" r="9" fill="#E8B8D0" fillOpacity="0.78" />
+      <circle cx="48" cy="32" r="6.5" fill="#C5B2DA" fillOpacity="0.75" />
+      <circle cx="38" cy="38" r="2.2" fill="#D5B66F" />
+    </svg>
+  </>
 );
 
 const Hero = () => {
@@ -448,58 +550,61 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[90svh] flex items-center justify-center overflow-hidden bg-[#0D1B16] px-4 sm:px-6 py-24 sm:py-28"
+      className="relative min-h-[90svh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#FFFCFA] via-[#FFFFFF] to-[#F4EFF8] px-4 sm:px-6 py-24 sm:py-28"
     >
-      {/* Royal Palace Background */}
+      {/* Watercolor Ivory, Lavender & Blush Backdrop */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Soft radial floral washes */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#EDE5F3_0%,#FFFCFA_58%,#FFFFFF_100%)] opacity-85" />
 
-        {/* Emerald gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#203D29_0%,#14251C_50%,#08130E_100%)]" />
-
-        {/* Subtle heritage pattern */}
+        {/* Subtle botanical dot lattice */}
         <div
-          className="absolute inset-0 opacity-[0.07]"
+          className="absolute inset-0 opacity-[0.18]"
           style={{
             backgroundImage:
-              "radial-gradient(circle at center, transparent 0 15px, #C6A04A 16px, transparent 17px)",
-            backgroundSize: "65px 65px",
+              "radial-gradient(circle at center, transparent 0 15px, #C5B2DA 16px, transparent 17px)",
+            backgroundSize: "68px 68px",
           }}
         />
 
-        {/* Ambient golden glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[350px] rounded-full bg-[#C6A04A]/10 blur-[120px]" />
+        {/* Ambient lavender & blush watercolor clouds */}
+        <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-[32rem] h-[22rem] rounded-full bg-[#E8B8D0]/22 blur-[120px]" />
+        <div className="absolute bottom-4 left-4 w-72 h-72 rounded-full bg-[#C5B2DA]/25 blur-[105px]" />
+        <div className="absolute bottom-4 right-4 w-72 h-72 rounded-full bg-[#E8B8D0]/22 blur-[105px]" />
 
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#C6A04A]/5 blur-[100px]" />
-        <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full bg-[#C6A04A]/5 blur-[100px]" />
+        {/* Delicate outer champagne-gold & lavender borders */}
+        <div className="absolute inset-3 sm:inset-7 rounded-3xl border border-[#E6D9EA]" />
+        <div className="absolute inset-5 sm:inset-10 rounded-2xl border border-[#D5B66F]/35" />
 
-        {/* Decorative outer frame */}
-        <div className="absolute inset-3 sm:inset-7 border border-[#C6A04A]/20" />
-        <div className="absolute inset-5 sm:inset-10 border border-[#C6A04A]/10" />
-
-        {/* Royal arch */}
-        <div className="absolute inset-x-[3%] top-[3%] bottom-[3%] opacity-40">
-          <RoyalArch />
+        {/* Floral arch outline */}
+        <div className="absolute inset-x-[3%] top-[3%] bottom-[3%] opacity-65">
+          <FloralArchFrame />
         </div>
+
+        {/* Corner watercolor floral clusters */}
+        <CornerFloralSprigs />
       </div>
 
-      {/* Floating gold particles */}
-      {[...Array(12)].map((_, i) => (
+      {/* Subtle floating blush & lavender petals/sparkles */}
+      {[...Array(10)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute pointer-events-none w-1 h-1 rounded-full bg-[#E8CA82]"
+          className={`absolute pointer-events-none w-1.5 h-1.5 rounded-full ${
+            i % 2 === 0 ? "bg-[#C5B2DA]/70" : "bg-[#E8B8D0]/75"
+          }`}
           style={{
             left: `${(i * 19 + 8) % 100}%`,
             top: `${(i * 23 + 12) % 90}%`,
           }}
           animate={{
-            y: [0, -30, 0],
-            opacity: [0.15, 0.8, 0.15],
-            scale: [0.7, 1.2, 0.7],
+            y: [0, -24, 0],
+            opacity: [0.25, 0.75, 0.25],
+            scale: [0.8, 1.15, 0.8],
           }}
           transition={{
-            duration: 4 + (i % 3),
+            duration: 4.5 + (i % 3),
             repeat: Infinity,
-            delay: i * 0.3,
+            delay: i * 0.35,
             ease: "easeInOut",
           }}
         />
@@ -507,19 +612,18 @@ const Hero = () => {
 
       {/* Main Content */}
       <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
-
-        {/* Royal Crown Icon */}
+        {/* Emblem Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center mb-7"
         >
-          <div className="relative flex items-center justify-center w-14 h-14 rounded-full border border-[#C6A04A]/50 bg-[#C6A04A]/10 shadow-[0_0_25px_rgba(198,160,74,0.12)]">
+          <div className="relative flex items-center justify-center w-14 h-14 rounded-full border border-[#D5B66F] bg-[#FFFFFF] shadow-[0_10px_25px_-8px_rgba(112,85,143,0.2),inset_0_0_0_3px_#F4EFF8]">
             <Crown
-              size={25}
-              strokeWidth={1.3}
-              className="text-[#E8CA82]"
+              size={24}
+              strokeWidth={1.35}
+              className="text-[#70558F]"
             />
           </div>
 
@@ -531,7 +635,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="text-[#E8CA82] text-[10px] sm:text-xs uppercase tracking-[0.35em] mb-5 font-light"
+          className="text-[#82758A] text-[10px] sm:text-xs font-medium uppercase tracking-[0.35em] mb-5"
         >
           Together with their families
         </motion.p>
@@ -541,27 +645,29 @@ const Hero = () => {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.9 }}
-          className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight text-[#E8CA82] tracking-wide drop-shadow-[0_3px_15px_rgba(198,160,74,0.2)] break-words"
+          className="font-serif font-medium text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight text-[#70558F] tracking-wide break-words"
         >
           {groom.name}
         </motion.h1>
 
-        {/* Royal Love Divider */}
+        {/* Floral Love Divider */}
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.7, duration: 0.7 }}
           className="flex items-center justify-center gap-5 my-3 sm:my-5"
         >
-          <span className="h-px w-12 sm:w-20 bg-gradient-to-r from-transparent to-[#C6A04A]" />
+          <span className="h-px w-12 sm:w-20 bg-gradient-to-r from-transparent via-[#E9D7A5] to-[#D5B66F]" />
 
-          <Heart
-            size={25}
-            strokeWidth={1.4}
-            className="text-[#C6A04A] fill-[#C6A04A]/20"
-          />
+          <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#F4EFF8] border border-[#D5B66F]/65">
+            <Heart
+              size={20}
+              strokeWidth={1.5}
+              className="text-[#70558F] fill-[#E8B8D0]/60"
+            />
+          </span>
 
-          <span className="h-px w-12 sm:w-20 bg-gradient-to-l from-transparent to-[#C6A04A]" />
+          <span className="h-px w-12 sm:w-20 bg-gradient-to-l from-transparent via-[#E9D7A5] to-[#D5B66F]" />
         </motion.div>
 
         {/* Bride Name */}
@@ -569,7 +675,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.9 }}
-          className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight text-[#E8CA82] tracking-wide drop-shadow-[0_3px_15px_rgba(198,160,74,0.2)] break-words"
+          className="font-serif font-medium text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight text-[#70558F] tracking-wide break-words"
         >
           {bride.name}
         </motion.h2>
@@ -583,79 +689,75 @@ const Hero = () => {
         >
           <GoldDivider className="max-w-[250px] mx-auto mb-5" />
 
-          <p className="text-[#F3E8CF]/90 text-sm sm:text-base tracking-wide font-light">
+          <p className="text-[#51465B] text-sm sm:text-base tracking-wide font-normal">
             Joyfully invite you to celebrate their wedding
           </p>
 
-          <p className="mt-3 text-xl sm:text-2xl text-[#E8CA82] font-serif tracking-widest">
+          <p className="mt-3 text-xl sm:text-2xl text-[#B69A54] font-serif tracking-widest">
             ଶୁଭ ବିବାହ
           </p>
         </motion.div>
 
-        {/* Wedding Details */}
+        {/* Wedding Date & Time Card */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}
           className="relative mt-9 max-w-[580px] mx-auto"
         >
-          {/* Outer gold border */}
-          <div className="p-[1px] bg-gradient-to-r from-transparent via-[#C6A04A]/70 to-transparent">
-            <div className="bg-[#102319]/80 backdrop-blur-md border-y border-[#C6A04A]/20 px-5 sm:px-8 py-5 sm:py-6">
-
+          <div className="p-[1px] rounded-2xl bg-gradient-to-r from-transparent via-[#D5B66F] to-transparent">
+            <div className="rounded-2xl bg-[#FFFFFF]/90 backdrop-blur-md border border-[#E6D9EA] shadow-[0_14px_34px_-16px_rgba(112,85,143,0.18)] px-5 sm:px-8 py-5 sm:py-6">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10">
-
                 {/* Wedding Date */}
                 <div className="flex items-center gap-4 text-left min-w-0">
-                  <div className="flex items-center justify-center w-11 h-11 shrink-0 rounded-full border border-[#C6A04A]/40 bg-[#C6A04A]/10">
+                  <div className="flex items-center justify-center w-11 h-11 shrink-0 rounded-full border border-[#D5B66F]/70 bg-[#F4EFF8]">
                     <CalendarDays
                       size={20}
-                      className="text-[#E8CA82]"
+                      className="text-[#70558F]"
                     />
                   </div>
 
                   <div>
-                    <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#C6A04A] mb-1">
+                    <p className="text-[10px] sm:text-xs font-medium uppercase tracking-[0.2em] text-[#B69A54] mb-1">
                       Wedding Date
                     </p>
 
-                    <p className="font-serif text-base sm:text-lg text-[#F3E8CF]">
+                    <p className="font-serif font-semibold text-base sm:text-lg text-[#70558F]">
                       {displayDate}
                     </p>
 
-                    <p className="text-[10px] text-[#E8CA82]/70 mt-1 tracking-wider">
+                    <p className="text-[11px] text-[#82758A] mt-0.5 tracking-wider">
                       {day}
                     </p>
                   </div>
                 </div>
 
                 {/* Vertical divider */}
-                <div className="hidden sm:block h-12 w-px bg-[#C6A04A]/30" />
+                <div className="hidden sm:block h-12 w-px bg-gradient-to-b from-transparent via-[#D5B66F] to-transparent" />
 
                 {/* Wedding Time */}
                 <div className="flex items-center gap-4 text-left min-w-0">
-                  <div className="flex items-center justify-center w-11 h-11 shrink-0 rounded-full border border-[#C6A04A]/40 bg-[#C6A04A]/10">
+                  <div className="flex items-center justify-center w-11 h-11 shrink-0 rounded-full border border-[#D5B66F]/70 bg-[#F4EFF8]">
                     <Clock
                       size={20}
-                      className="text-[#E8CA82]"
+                      className="text-[#70558F]"
                     />
                   </div>
 
                   <div>
-                    <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#C6A04A] mb-1">
+                    <p className="text-[10px] sm:text-xs font-medium uppercase tracking-[0.2em] text-[#B69A54] mb-1">
                       Wedding Time
                     </p>
 
-                    <p className="font-serif text-base sm:text-lg text-[#F3E8CF]">
+                    <p className="font-serif font-semibold text-base sm:text-lg text-[#70558F]">
                       {time}
                     </p>
 
-                    <p className="text-[10px] text-[#E8CA82]/70 mt-1 tracking-wider">
+                    <p className="text-[11px] text-[#82758A] mt-0.5 tracking-wider">
                       We await your presence
                     </p>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -668,11 +770,11 @@ const Hero = () => {
           transition={{ delay: 1.5, duration: 0.8 }}
           onClick={scrollToEvents}
           whileHover={{
-            scale: 1.04,
-            boxShadow: "0 0 25px rgba(198,160,74,0.35)",
+            scale: 1.035,
+            boxShadow: "0 12px 28px -8px rgba(112, 85, 143, 0.25)",
           }}
           whileTap={{ scale: 0.96 }}
-          className="group relative mt-9 inline-flex items-center justify-center gap-3 overflow-hidden rounded-full border border-[#E8CA82] bg-gradient-to-b from-[#F3DEA5] via-[#C6A04A] to-[#9A702D] px-8 sm:px-10 py-4 text-xs sm:text-sm font-semibold tracking-[0.18em] text-[#241708] uppercase shadow-lg transition-all duration-300"
+          className="group relative mt-9 inline-flex items-center justify-center gap-3 overflow-hidden rounded-full border border-[#D5B66F] bg-gradient-to-b from-[#FFFFFF] via-[#F4EFF8] to-[#EDE5F3] px-8 sm:px-10 py-4 text-xs sm:text-sm font-semibold tracking-[0.18em] text-[#70558F] uppercase shadow-[0_10px_24px_-10px_rgba(112,85,143,0.2),inset_0_0_0_1px_rgba(233,215,165,0.75)] transition-all duration-300"
         >
           <span className="relative z-10">
             Explore Invitation
@@ -680,12 +782,12 @@ const Hero = () => {
 
           <ChevronDown
             size={17}
-            className="relative z-10 transition-transform duration-300 group-hover:translate-y-1"
+            className="relative z-10 text-[#B69A54] transition-transform duration-300 group-hover:translate-y-1"
           />
 
           {/* Shimmer */}
           <motion.span
-            className="absolute inset-y-0 w-1/4 -skew-x-12 bg-white/30"
+            className="absolute inset-y-0 w-1/4 -skew-x-12 bg-gradient-to-r from-transparent via-[#E9D7A5]/55 to-transparent"
             animate={{ x: ["-150%", "500%"] }}
             transition={{
               duration: 3,
@@ -695,17 +797,16 @@ const Hero = () => {
           />
         </motion.button>
 
-        {/* Bottom royal decoration */}
+        {/* Bottom floral sparkle divider */}
         <motion.div
-          animate={{ y: [0, 7, 0], opacity: [0.5, 1, 0.5] }}
+          animate={{ y: [0, 6, 0], opacity: [0.55, 1, 0.55] }}
           transition={{ duration: 2.5, repeat: Infinity }}
-          className="mt-9 flex justify-center items-center gap-3 text-[#C6A04A]"
+          className="mt-9 flex justify-center items-center gap-3 text-[#B69A54]"
         >
-          <span className="h-px w-8 bg-[#C6A04A]/50" />
-          <Sparkles size={17} />
-          <span className="h-px w-8 bg-[#C6A04A]/50" />
+          <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#D5B66F]" />
+          <Sparkles size={17} className="text-[#A58AC5]" />
+          <span className="h-px w-8 bg-gradient-to-l from-transparent to-[#D5B66F]" />
         </motion.div>
-
       </div>
     </section>
   );

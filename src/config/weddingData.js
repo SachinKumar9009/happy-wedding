@@ -18,7 +18,7 @@ export const weddingData = {
 
   // Main Wedding
   wedding: {
-    date: "2027-07-23",         
+    date: "2027-07-23",
     displayDate: "23 July 2027",
     time: "4:00 PM",
     day: "Friday",
@@ -37,7 +37,8 @@ export const weddingData = {
       time: "10:00 AM",
       venue: "Pradhan Residence, Seepur",
       address: "Pradhan Residence, Near XYZ Road, Talcher, Odisha",
-      description: "Traditional turmeric ceremony filled with laughter, music and blessings from family and friends.",
+      description:
+        "Traditional turmeric ceremony filled with laughter, music and blessings from family and friends.",
       mapLink: "https://maps.google.com", // replace later
     },
     {
@@ -48,7 +49,8 @@ export const weddingData = {
       time: "4:00 PM",
       venue: "Pradhan Residence, Seepur",
       address: "Pradhan Residence, Near XYZ Road, Talcher, Odisha",
-      description: "Beautiful mehendi application, songs and joyful celebrations with loved ones.",
+      description:
+        "Beautiful mehendi application, songs and joyful celebrations with loved ones.",
       mapLink: "https://maps.google.com",
     },
     {
@@ -59,7 +61,8 @@ export const weddingData = {
       time: "7:00 PM",
       venue: "Hotel Crown Palace",
       address: "Plot No. 12, Near Airport Road, Bhubaneswar, Odisha 751003",
-      description: "An evening of music, dance and celebration with family and friends.",
+      description:
+        "An evening of music, dance and celebration with family and friends.",
       mapLink: "https://maps.google.com",
     },
     {
@@ -70,7 +73,8 @@ export const weddingData = {
       time: "4:00 PM",
       venue: "Hotel Crown Palace",
       address: "Plot No. 12, Near Airport Road, Bhubaneswar, Odisha 751003",
-      description: "The sacred wedding rituals where two souls unite forever.",
+      description:
+        "The sacred wedding rituals where two souls unite forever.",
       mapLink: "https://maps.google.com",
     },
     {
@@ -81,7 +85,8 @@ export const weddingData = {
       time: "8:00 PM",
       venue: "Hotel Crown Palace",
       address: "Plot No. 12, Near Airport Road, Bhubaneswar, Odisha 751003",
-      description: "Grand reception dinner and celebrations with all our beloved guests.",
+      description:
+        "Grand reception dinner and celebrations with all our beloved guests.",
       mapLink: "https://maps.google.com",
     },
   ],
@@ -96,7 +101,6 @@ export const weddingData = {
   },
 
   // Gallery
-  
   gallery: [
     {
       id: 1,
@@ -148,20 +152,23 @@ export const weddingData = {
     },
   ],
 
-
   // Family
   family: {
     groomParents: "Shri Suresh Pandey & Smt. Sunita Pandey",
     brideParents: "Shri Rajesh Pandey & Smt. Kavita Pandey",
-    message: "With the blessings of our parents and elders, we invite you to share in our joy as we begin this beautiful journey together.",
-    messageOdia: "ଆମ ପିତାମାତା ଓ ବଡ଼ମାନଙ୍କ ଆଶୀର୍ବାଦରେ ଆମେ ଆପଣଙ୍କୁ ଏହି ଶୁଭ ଅବସରରେ ସାମିଲ ହେବାକୁ ନିମନ୍ତ୍ରଣ କରୁଛୁ।",
-    children: "Waiting eagerly: Mohit, Rohan, Basu, Riya & The Entire Pradhan Family",
+    message:
+      "With the blessings of our parents and elders, we invite you to share in our joy as we begin this beautiful journey together.",
+    messageOdia:
+      "ଆମ ପିତାମାତା ଓ ବଡ଼ମାନଙ୍କ ଆଶୀର୍ବାଦରେ ଆମେ ଆପଣଙ୍କୁ ଏହି ଶୁଭ ଅବସରରେ ସାମିଲ ହେବାକୁ ନିମନ୍ତ୍ରଣ କରୁଛୁ।",
+    children:
+      "Waiting eagerly: Mohit, Rohan, Basu, Riya & The Entire Pradhan Family",
   },
 
   // Site Meta
   meta: {
     title: "Happy & Demo Wedding | 23 July 2027",
-    description: "You are cordially invited to the wedding of Happy Pradhan and Demo Pradhan on 23 July 2027.",
+    description:
+      "You are cordially invited to the wedding of Happy Pradhan and Demo Pradhan on 23 July 2027.",
   },
 
   // Music (we will add the actual file later)

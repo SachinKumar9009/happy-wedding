@@ -342,7 +342,6 @@
 
 
 
-
 import { motion } from "motion/react";
 import {
   Heart,
@@ -355,11 +354,57 @@ import {
 import { weddingData } from "../config/weddingData";
 
 const FooterDivider = () => (
-  <div className="flex items-center justify-center gap-3 text-[#C6A04A]">
-    <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#C6A04A]/70" />
-    <Flower2 size={19} strokeWidth={1.3} />
-    <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#C6A04A]/70" />
+  <div className="flex items-center justify-center gap-3 text-[#B69A54]">
+    <span className="h-px w-12 bg-gradient-to-r from-transparent via-[#E9D7A5] to-[#D5B66F]" />
+    <span className="flex h-7 w-7 items-center justify-center rounded-full border border-[#D5B66F]/70 bg-[#FFFFFF] text-[#70558F] shadow-2xs">
+      <Flower2 size={16} strokeWidth={1.45} />
+    </span>
+    <span className="h-px w-12 bg-gradient-to-l from-transparent via-[#E9D7A5] to-[#D5B66F]" />
   </div>
+);
+
+const CornerFloralSprigs = () => (
+  <>
+    <svg
+      viewBox="0 0 175 175"
+      className="pointer-events-none absolute -top-2 -left-2 h-28 w-28 opacity-85 sm:h-36 sm:w-36"
+      aria-hidden="true"
+    >
+      <circle cx="34" cy="34" r="38" fill="#E8B8D0" fillOpacity="0.22" />
+      <circle cx="62" cy="28" r="26" fill="#C5B2DA" fillOpacity="0.22" />
+      <path
+        d="M16 16 C46 30 72 52 94 84"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="40" cy="40" r="9.5" fill="#E8B8D0" fillOpacity="0.82" />
+      <circle cx="50" cy="34" r="6.8" fill="#C5B2DA" fillOpacity="0.78" />
+      <circle cx="34" cy="50" r="6.8" fill="#DCAAC3" fillOpacity="0.75" />
+      <circle cx="40" cy="40" r="2.2" fill="#D5B66F" />
+    </svg>
+
+    <svg
+      viewBox="0 0 175 175"
+      className="pointer-events-none absolute -bottom-2 -right-2 h-28 w-28 -scale-x-100 -scale-y-100 opacity-85 sm:h-36 sm:w-36"
+      aria-hidden="true"
+    >
+      <circle cx="34" cy="34" r="38" fill="#C5B2DA" fillOpacity="0.22" />
+      <circle cx="62" cy="28" r="26" fill="#E8B8D0" fillOpacity="0.22" />
+      <path
+        d="M16 16 C46 30 72 52 94 84"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="40" cy="40" r="9.5" fill="#C5B2DA" fillOpacity="0.82" />
+      <circle cx="50" cy="34" r="6.8" fill="#E8B8D0" fillOpacity="0.78" />
+      <circle cx="34" cy="50" r="6.8" fill="#DCAAC3" fillOpacity="0.75" />
+      <circle cx="40" cy="40" r="2.2" fill="#D5B66F" />
+    </svg>
+  </>
 );
 
 const Footer = () => {
@@ -392,30 +437,33 @@ ${window.location.href}`;
   };
 
   return (
-    <footer className="relative isolate overflow-hidden border-t border-[#C6A04A]/30 bg-[#0D1B16] px-5 py-16 text-[#F3E8CF] sm:py-20">
+    <footer className="relative isolate overflow-hidden border-t border-[#E6D9EA] bg-gradient-to-b from-[#F4EFF8] via-[#FFFCFA] to-[#EDE5F3] px-4 py-12 text-[#51465B] sm:px-6 sm:py-18">
+      {/* Top Champagne-Gold Hairline */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#D5B66F] to-transparent" />
 
-      {/* Royal Background Decorations */}
+      {/* Watercolor Floral & Champagne-Gold Background Decorations */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-24 top-10 h-64 w-64 rounded-full border border-[#C6A04A]/15" />
-        <div className="absolute -left-16 top-20 h-48 w-48 rounded-full border border-[#C6A04A]/10" />
+        <div className="absolute -left-24 top-10 h-64 w-64 rounded-full border border-[#D5B66F]/30 bg-[#E8B8D0]/15" />
+        <div className="absolute -left-16 top-20 h-48 w-48 rounded-full border border-[#C5B2DA]/40" />
 
-        <div className="absolute -right-24 bottom-10 h-64 w-64 rounded-full border border-[#C6A04A]/15" />
-        <div className="absolute -right-16 bottom-20 h-48 w-48 rounded-full border border-[#C6A04A]/10" />
+        <div className="absolute -right-24 bottom-10 h-64 w-64 rounded-full border border-[#D5B66F]/30 bg-[#C5B2DA]/18" />
+        <div className="absolute -right-16 bottom-20 h-48 w-48 rounded-full border border-[#E8B8D0]/45" />
 
-        <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C6A04A]/10 blur-[110px]" />
+        <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E8B8D0]/20 blur-[110px]" />
 
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="absolute inset-0 opacity-[0.14]"
           style={{
             backgroundImage:
-              "radial-gradient(#E8CA82 0.8px, transparent 0.8px)",
+              "radial-gradient(#C5B2DA 0.9px, transparent 0.9px)",
             backgroundSize: "25px 25px",
           }}
         />
+
+        <CornerFloralSprigs />
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl text-center">
-
         {/* Top Ornament */}
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
@@ -434,18 +482,18 @@ ${window.location.href}`;
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="mb-5 flex items-center justify-center gap-2 text-[#C6A04A]">
-            <Crown size={19} strokeWidth={1.3} />
-            <p className="text-[10px] font-light uppercase tracking-[0.35em] text-[#E8CA82]/80 sm:text-xs">
+          <div className="mb-5 flex items-center justify-center gap-2 text-[#B69A54]">
+            <Crown size={18} strokeWidth={1.4} className="text-[#70558F]" />
+            <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-[#82758A] sm:text-xs">
               Together With Their Families
             </p>
-            <Crown size={19} strokeWidth={1.3} />
+            <Crown size={18} strokeWidth={1.4} className="text-[#70558F]" />
           </div>
 
-          <h2 className="font-serif text-3xl leading-relaxed tracking-wide text-[#E8CA82] sm:text-5xl md:text-6xl">
+          <h2 className="font-serif text-3xl font-medium leading-relaxed tracking-wide text-[#70558F] sm:text-5xl md:text-6xl">
             {groom.name}
-            <span className="mx-3 font-sans font-light text-[#C6A04A]">
-              &
+            <span className="mx-3 font-sans font-light text-[#B69A54]">
+              &amp;
             </span>
             {bride.name}
           </h2>
@@ -454,7 +502,7 @@ ${window.location.href}`;
             <FooterDivider />
           </div>
 
-          <p className="text-xs font-light uppercase tracking-[0.3em] text-[#F3E8CF]/75 sm:text-sm">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#70558F] sm:text-sm">
             {wedding.displayDate}
           </p>
         </motion.div>
@@ -467,19 +515,19 @@ ${window.location.href}`;
           transition={{ duration: 0.7, delay: 0.1 }}
           className="mx-auto mt-12 max-w-2xl"
         >
-          <div className="mb-5 flex items-center justify-center gap-2 text-[#C6A04A]">
-            <Sparkles size={17} />
-            <span className="text-[10px] font-light uppercase tracking-[0.3em] text-[#E8CA82]/80">
+          <div className="mb-5 flex items-center justify-center gap-2 text-[#B69A54]">
+            <Sparkles size={17} className="text-[#A58AC5]" />
+            <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-[#82758A]">
               With Love and Gratitude
             </span>
-            <Sparkles size={17} />
+            <Sparkles size={17} className="text-[#A58AC5]" />
           </div>
 
-          <h3 className="mb-5 font-serif text-3xl tracking-wide text-[#E8CA82]">
+          <h3 className="mb-5 font-serif text-3xl font-semibold tracking-wide text-[#70558F]">
             Thank You!
           </h3>
 
-          <p className="text-sm font-light leading-8 text-[#F3E8CF]/85 sm:text-base">
+          <p className="text-sm font-normal leading-8 text-[#51465B] sm:text-base">
             Your presence and blessings will make our special day even more
             memorable. We look forward to celebrating this beautiful beginning
             with you and your family.
@@ -487,7 +535,7 @@ ${window.location.href}`;
 
           <p
             lang="or"
-            className="mt-7 font-serif text-base font-light leading-9 tracking-wide text-[#E8CA82] sm:text-lg"
+            className="mt-7 font-serif text-base font-normal leading-9 tracking-wide text-[#70558F] sm:text-lg"
           >
             ଆପଣଙ୍କ ଉପସ୍ଥିତି ଓ ଆଶୀର୍ବାଦ ଆମ ପାଇଁ ଅମୂଲ୍ୟ।
             <br />
@@ -495,32 +543,32 @@ ${window.location.href}`;
           </p>
         </motion.div>
 
-        {/* Venue Details */}
-        <motion.div
+        {/* Venue Details Card */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mx-auto mt-10 max-w-md rounded-xl border border-[#C6A04A]/25 bg-[#14251C]/70 px-6 py-5"
+          className="mx-auto mt-10 max-w-md rounded-2xl border border-[#E6D9EA] bg-gradient-to-b from-[#FFFFFF] via-[#FFFCFA] to-[#F4EFF8] px-6 py-5 shadow-[0_14px_30px_-14px_rgba(112,85,143,0.18)]"
         >
-          <p className="mb-2 text-[10px] font-light uppercase tracking-[0.3em] text-[#C6A04A]">
+          <p className="mb-1.5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#B69A54]">
             Celebrating At
           </p>
 
-          <p className="font-serif text-lg text-[#E8CA82]">
+          <p className="font-serif text-lg font-semibold text-[#70558F]">
             {venue.name}
           </p>
-        </motion.div>
+        </motion.div> */}
 
         {/* Action Buttons */}
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-
           {/* WhatsApp Share */}
           <motion.button
-            whileHover={{ scale: 1.04 }}
+            type="button"
+            whileHover={{ scale: 1.035 }}
             whileTap={{ scale: 0.96 }}
             onClick={shareOnWhatsApp}
-            className="flex min-h-12 items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-8 py-3.5 text-xs font-semibold uppercase tracking-widest text-white shadow-lg shadow-[#25D366]/15 transition-colors hover:bg-[#20ba5a] sm:text-sm"
+            className="flex min-h-12 items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-8 py-3.5 text-xs font-semibold uppercase tracking-widest text-white shadow-[0_10px_24px_-8px_rgba(37,211,102,0.45)] transition-colors hover:bg-[#20ba5a] sm:text-sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -532,6 +580,7 @@ ${window.location.href}`;
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
+              aria-hidden="true"
             >
               <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
             </svg>
@@ -541,40 +590,43 @@ ${window.location.href}`;
 
           {/* Back to Top */}
           <motion.button
-            whileHover={{ scale: 1.04 }}
+            type="button"
+            whileHover={{ scale: 1.035 }}
             whileTap={{ scale: 0.96 }}
             onClick={scrollToTop}
-            className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#C6A04A]/50 bg-[#14251C]/70 px-8 py-3.5 text-xs font-medium uppercase tracking-widest text-[#E8CA82] transition-all duration-300 hover:border-[#E8CA82] hover:bg-[#C6A04A]/10 sm:text-sm"
+            className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#D5B66F] bg-gradient-to-b from-[#FFFFFF] via-[#F4EFF8] to-[#EDE5F3] px-8 py-3.5 text-xs font-semibold uppercase tracking-widest text-[#70558F] shadow-[0_8px_20px_-8px_rgba(112,85,143,0.18),inset_0_0_0_1px_rgba(233,215,165,0.75)] transition-all duration-300 hover:border-[#B69A54] sm:text-sm"
           >
-            <ArrowUp size={18} />
+            <ArrowUp size={18} className="text-[#B69A54]" />
             Back to Top
           </motion.button>
         </div>
 
         {/* Bottom Closing Section */}
-        <div className="mt-16 border-t border-[#C6A04A]/20 pt-8">
-
+        <div className="mt-10 border-t border-[#E6D9EA] pt-8">
           <FooterDivider />
 
-          <p className="mx-auto mt-6 max-w-xl text-xs font-light leading-6 text-[#F3E8CF]/60 sm:text-sm">
+          <p className="mx-auto mt-6 max-w-xl text-xs font-normal leading-6 text-[#82758A] sm:text-sm">
             With love and gratitude, we invite you to be part of our
             celebration and bless our beautiful beginning.
           </p>
 
-          <p className="mt-6 flex items-center justify-center gap-2 text-xs font-light tracking-wide text-[#E8CA82]/80">
+          <p className="mt-6 flex items-center justify-center gap-2 text-xs font-medium tracking-wide text-[#70558F]">
             Made with
             <Heart
               size={14}
-              className="fill-[#C6A04A] text-[#C6A04A]"
+              className="fill-[#E8B8D0] text-[#70558F]"
             />
-            for {groom.name} & {bride.name}
+            for {groom.name} &amp; {bride.name}
           </p>
 
-          <p className="mt-4 text-[11px] font-light text-[#F3E8CF]/40">
-            © {new Date().getFullYear()} Pradhan's. All rights reserved.
+          <p className="mt-4 text-[11px] font-normal text-[#82758A]">
+            © {new Date().getFullYear()} Pradhan&apos;s. All rights reserved.
           </p>
 
-          <p className="mt-3 font-serif text-sm tracking-widest text-[#C6A04A]/70">
+          <p
+            lang="or"
+            className="mt-3 font-serif text-sm tracking-widest text-[#B69A54]"
+          >
             ଶୁଭ ବିବାହ
           </p>
         </div>

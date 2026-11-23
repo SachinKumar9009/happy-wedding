@@ -385,7 +385,6 @@
 
 
 
-
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Heart, Sparkles, Crown } from "lucide-react";
@@ -434,21 +433,62 @@ const calculateCountdown = () => {
   };
 };
 
-// Decorative gold divider
+// Decorative champagne-gold & floral divider
 const GoldDivider = ({ className = "" }) => (
   <div className={`flex items-center justify-center gap-3 ${className}`}>
-    <span className="h-px flex-1 bg-gradient-to-r from-transparent to-[#C6A04A]" />
+    <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#E9D7A5] to-[#D5B66F]" />
 
-    <span className="w-2 h-2 rotate-45 border border-[#E8CA82] bg-[#C6A04A]/20" />
+    <span className="w-2.5 h-2.5 rounded-full border border-[#D5B66F] bg-[#E8B8D0]/75" />
 
-    <span className="h-px flex-1 bg-gradient-to-l from-transparent to-[#C6A04A]" />
+    <span className="h-px flex-1 bg-gradient-to-l from-transparent via-[#E9D7A5] to-[#D5B66F]" />
   </div>
+);
+
+// Subtle watercolor corner botanical accent
+const CornerFloralAccent = () => (
+  <>
+    <svg
+      viewBox="0 0 150 150"
+      className="pointer-events-none absolute -top-2 -left-2 w-24 h-24 sm:w-32 sm:h-32 opacity-85"
+      aria-hidden="true"
+    >
+      <circle cx="28" cy="28" r="34" fill="#C5B2DA" fillOpacity="0.22" />
+      <path
+        d="M14 14 C38 26 60 44 78 70"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="34" cy="34" r="8.5" fill="#C5B2DA" fillOpacity="0.78" />
+      <circle cx="44" cy="28" r="6" fill="#E8B8D0" fillOpacity="0.78" />
+      <circle cx="34" cy="34" r="2" fill="#D5B66F" />
+    </svg>
+
+    <svg
+      viewBox="0 0 150 150"
+      className="pointer-events-none absolute -bottom-2 -right-2 w-24 h-24 sm:w-32 sm:h-32 opacity-85 -scale-x-100 -scale-y-100"
+      aria-hidden="true"
+    >
+      <circle cx="28" cy="28" r="34" fill="#E8B8D0" fillOpacity="0.22" />
+      <path
+        d="M14 14 C38 26 60 44 78 70"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="34" cy="34" r="8.5" fill="#E8B8D0" fillOpacity="0.78" />
+      <circle cx="44" cy="28" r="6" fill="#C5B2DA" fillOpacity="0.78" />
+      <circle cx="34" cy="34" r="2" fill="#D5B66F" />
+    </svg>
+  </>
 );
 
 // Single countdown unit
 const TimeUnit = ({ value, label, index }) => (
   <motion.div
-    initial={{ opacity: 0, y: 30 }}
+    initial={{ opacity: 0, y: 28 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{
@@ -458,20 +498,18 @@ const TimeUnit = ({ value, label, index }) => (
     }}
     className="relative group"
   >
-    {/* Outer ornamental frame */}
-    <div className="relative p-[1px] bg-gradient-to-b from-[#E8CA82] via-[#8D692E] to-[#C6A04A] shadow-[0_8px_25px_rgba(0,0,0,0.25)]">
+    {/* Champagne-gold & soft border frame */}
+    <div className="relative p-[1.5px] rounded-xl bg-gradient-to-b from-[#E9D7A5] via-[#D5B66F] to-[#E6D9EA] shadow-[0_14px_30px_-14px_rgba(112,85,143,0.2)]">
+      <div className="relative rounded-xl bg-gradient-to-b from-[#FFFFFF] via-[#FFFCFA] to-[#F4EFF8] px-1.5 py-4 sm:px-4 sm:py-8 border border-[#E6D9EA]/80">
+        {/* Corner champagne-gold accents */}
+        <span className="absolute top-2 left-2 w-2.5 h-2.5 border-t border-l border-[#D5B66F]" />
+        <span className="absolute top-2 right-2 w-2.5 h-2.5 border-t border-r border-[#D5B66F]" />
+        <span className="absolute bottom-2 left-2 w-2.5 h-2.5 border-b border-l border-[#D5B66F]" />
+        <span className="absolute bottom-2 right-2 w-2.5 h-2.5 border-b border-r border-[#D5B66F]" />
 
-      <div className="relative bg-gradient-to-b from-[#1C3525] to-[#0D1B16] px-1 py-5 sm:px-4 sm:py-8">
-
-        {/* Corner decorations */}
-        <span className="absolute top-1 left-1 w-3 h-3 border-t border-l border-[#E8CA82]/70" />
-        <span className="absolute top-1 right-1 w-3 h-3 border-t border-r border-[#E8CA82]/70" />
-        <span className="absolute bottom-1 left-1 w-3 h-3 border-b border-l border-[#E8CA82]/70" />
-        <span className="absolute bottom-1 right-1 w-3 h-3 border-b border-r border-[#E8CA82]/70" />
-
-        {/* Small top ornament */}
+        {/* Small top floral dot */}
         <div className="flex justify-center mb-3">
-          <div className="w-1.5 h-1.5 rotate-45 bg-[#C6A04A]" />
+          <div className="w-2 h-2 rounded-full bg-[#E8B8D0] border border-[#D5B66F]" />
         </div>
 
         {/* Countdown Number */}
@@ -482,20 +520,19 @@ const TimeUnit = ({ value, label, index }) => (
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25 }}
-            className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#E8CA82] tabular-nums leading-none drop-shadow-[0_2px_10px_rgba(198,160,74,0.2)]"
+            className="font-serif font-semibold text-3xl sm:text-5xl md:text-6xl text-[#70558F] tabular-nums leading-none"
           >
             {String(value).padStart(2, "0")}
           </motion.p>
         </AnimatePresence>
 
-        {/* Gold divider */}
-        <div className="w-8 h-px mx-auto my-4 bg-[#C6A04A]/60" />
+        {/* Champagne-gold divider */}
+        <div className="w-8 h-px mx-auto my-4 bg-gradient-to-r from-transparent via-[#D5B66F] to-transparent" />
 
         {/* Unit label */}
-        <p className="text-[9px] sm:text-xs uppercase tracking-[0.16em] sm:tracking-[0.22em] text-[#F3E8CF]/80 font-light">
+        <p className="text-[9px] sm:text-xs font-medium uppercase tracking-[0.16em] sm:tracking-[0.22em] text-[#82758A]">
           {label}
         </p>
-
       </div>
     </div>
   </motion.div>
@@ -524,41 +561,36 @@ const Countdown = () => {
   return (
     <section
       id="countdown"
-      className="relative overflow-hidden bg-[#0D1B16] px-4 sm:px-6 py-20 sm:py-28 border-y border-[#C6A04A]/20"
+      className="relative overflow-hidden bg-gradient-to-b from-[#F4EFF8] via-[#FFFCFA] to-[#EDE5F3]/75 px-4 sm:px-6 py-14 sm:py-20 border-y border-[#E6D9EA]"
     >
-
-      {/* Background Decorations */}
+      {/* Lavender & Blush Watercolor Backdrop */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#EDE5F3_0%,#FFFCFA_62%,#F4EFF8_100%)] opacity-85" />
 
-        {/* Emerald gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1C3525_0%,#102319_55%,#08130E_100%)]" />
-
-        {/* Heritage pattern */}
         <div
-          className="absolute inset-0 opacity-[0.06]"
+          className="absolute inset-0 opacity-[0.16]"
           style={{
             backgroundImage:
-              "radial-gradient(circle at center, transparent 0 15px, #C6A04A 16px, transparent 17px)",
+              "radial-gradient(circle at center, transparent 0 15px, #C5B2DA 16px, transparent 17px)",
             backgroundSize: "65px 65px",
           }}
         />
 
-        {/* Ambient gold glow */}
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[#C6A04A]/10 blur-[120px]" />
+        <div className="absolute -top-28 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[#E8B8D0]/22 blur-[120px]" />
 
-        <div className="absolute -bottom-32 -left-20 w-80 h-80 rounded-full bg-[#C6A04A]/5 blur-[100px]" />
-        <div className="absolute -bottom-32 -right-20 w-80 h-80 rounded-full bg-[#C6A04A]/5 blur-[100px]" />
+        <div className="absolute -bottom-28 -left-20 w-80 h-80 rounded-full bg-[#C5B2DA]/25 blur-[105px]" />
+        <div className="absolute -bottom-28 -right-20 w-80 h-80 rounded-full bg-[#E8B8D0]/22 blur-[105px]" />
 
-        {/* Decorative outer borders */}
-        <div className="absolute inset-3 sm:inset-7 border border-[#C6A04A]/15" />
-        <div className="absolute inset-5 sm:inset-10 border border-[#C6A04A]/10" />
+        {/* Delicate outer borders */}
+        <div className="absolute inset-3 sm:inset-7 rounded-3xl border border-[#E6D9EA]" />
+        <div className="absolute inset-5 sm:inset-10 rounded-2xl border border-[#D5B66F]/35" />
 
+        <CornerFloralAccent />
       </div>
 
       {/* Main Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-
-        {/* Royal Crown */}
+        {/* Emblem Badge */}
         <motion.div
           initial={{ opacity: 0, y: -15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -566,11 +598,11 @@ const Countdown = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center mb-7"
         >
-          <div className="flex items-center justify-center w-14 h-14 rounded-full border border-[#C6A04A]/50 bg-[#C6A04A]/10 shadow-[0_0_25px_rgba(198,160,74,0.12)]">
+          <div className="flex items-center justify-center w-14 h-14 rounded-full border border-[#D5B66F] bg-[#FFFFFF] shadow-[0_10px_24px_-8px_rgba(112,85,143,0.2),inset_0_0_0_3px_#F4EFF8]">
             <Crown
-              size={25}
-              strokeWidth={1.3}
-              className="text-[#E8CA82]"
+              size={24}
+              strokeWidth={1.35}
+              className="text-[#70558F]"
             />
           </div>
 
@@ -584,63 +616,59 @@ const Countdown = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <p className="mb-4 text-[10px] sm:text-xs uppercase tracking-[0.35em] text-[#C6A04A] font-light">
+          <p className="mb-4 text-[10px] sm:text-xs font-medium uppercase tracking-[0.35em] text-[#B69A54]">
             A Beautiful Beginning
           </p>
 
-          <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#E8CA82] tracking-wide leading-tight">
+          <h2 className="font-serif font-medium text-3xl sm:text-5xl md:text-6xl text-[#70558F] tracking-wide leading-tight">
             Counting Every Moment
           </h2>
 
-          <p className="mt-5 text-sm sm:text-base text-[#F3E8CF]/75 font-light tracking-wide">
-            Until the royal celebration of
+          <p className="mt-5 text-sm sm:text-base text-[#51465B] font-normal tracking-wide">
+            Until the celebration of
           </p>
 
-          <p className="mt-2 font-serif text-lg sm:text-xl text-[#E8CA82]">
+          <p className="mt-2 font-serif font-semibold text-lg sm:text-xl text-[#70558F]">
             {groom.name} & {bride.name}
           </p>
         </motion.div>
 
         {/* Countdown Display */}
         {countdown.completed ? (
-
           /* Wedding Day Celebration */
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative mt-12 max-w-2xl mx-auto p-[1px] bg-gradient-to-r from-transparent via-[#C6A04A] to-transparent"
+            className="relative mt-12 max-w-2xl mx-auto p-[1.5px] rounded-2xl bg-gradient-to-r from-transparent via-[#D5B66F] to-transparent"
           >
-            <div className="bg-[#102319]/90 px-5 py-12 sm:py-16 border-y border-[#C6A04A]/30">
-
+            <div className="rounded-2xl bg-[#FFFFFF]/95 px-5 py-12 sm:py-16 border border-[#E6D9EA] shadow-[0_16px_36px_-14px_rgba(112,85,143,0.2)]">
               <motion.div
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity }}
               >
                 <Sparkles
                   size={38}
-                  className="mx-auto mb-6 text-[#E8CA82]"
+                  className="mx-auto mb-6 text-[#A58AC5]"
                 />
               </motion.div>
 
-              <h3 className="font-serif text-3xl sm:text-5xl text-[#E8CA82]">
+              <h3 className="font-serif font-medium text-3xl sm:text-5xl text-[#70558F]">
                 The Celebration Has Begun!
               </h3>
 
-              <p className="mt-5 text-sm sm:text-base text-[#F3E8CF]/85 font-light leading-relaxed">
-                {groom.name} & {bride.name}'s special day is here.
+              <p className="mt-5 text-sm sm:text-base text-[#51465B] font-normal leading-relaxed">
+                {groom.name} & {bride.name}&apos;s special day is here.
               </p>
 
-              <p className="mt-4 text-xl sm:text-2xl text-[#E8CA82] font-serif tracking-widest">
+              <p className="mt-4 text-xl sm:text-2xl text-[#B69A54] font-serif tracking-widest">
                 ଶୁଭ ବିବାହ
               </p>
             </div>
           </motion.div>
-
         ) : (
-
-          /* Four Royal Countdown Units */
-          <div className="mt-12 sm:mt-16 grid grid-cols-4 gap-2 sm:gap-5 md:gap-7 max-w-3xl mx-auto">
+          /* Four Lavender & Gold Countdown Units */
+          <div className="mt-8 sm:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-5 md:gap-7 max-w-3xl mx-auto">
             {timeUnits.map((unit, index) => (
               <TimeUnit
                 key={unit.label}
@@ -650,7 +678,6 @@ const Countdown = () => {
               />
             ))}
           </div>
-
         )}
 
         {/* Wedding Date Details */}
@@ -659,44 +686,43 @@ const Countdown = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="mt-12 sm:mt-14"
+          className="mt-8 sm:mt-14"
         >
           <GoldDivider className="max-w-[220px] mx-auto mb-6" />
 
-          <p className="text-[10px] uppercase tracking-[0.3em] text-[#C6A04A] mb-3">
+          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-[#B69A54] mb-3">
             Save The Date
           </p>
 
-          <p className="font-serif text-xl sm:text-2xl text-[#F3E8CF]">
+          <p className="font-serif font-semibold text-xl sm:text-2xl text-[#70558F]">
             {weddingData.wedding.displayDate}
           </p>
 
-          <p className="mt-2 text-sm text-[#E8CA82]/80 font-light tracking-widest">
+          <p className="mt-2 text-sm text-[#82758A] font-normal tracking-widest">
             {weddingData.wedding.time} IST
           </p>
 
-          <p className="mt-6 text-xl sm:text-2xl text-[#E8CA82] font-serif tracking-[0.2em]">
+          <p className="mt-6 text-xl sm:text-2xl text-[#B69A54] font-serif tracking-[0.2em]">
             ଶୁଭ ବିବାହ
           </p>
         </motion.div>
 
-        {/* Bottom Ornament */}
+        {/* Bottom Floral Ornament */}
         <motion.div
           animate={{
-            opacity: [0.4, 1, 0.4],
+            opacity: [0.55, 1, 0.55],
             y: [0, 5, 0],
           }}
           transition={{
             duration: 3,
             repeat: Infinity,
           }}
-          className="mt-9 flex justify-center items-center gap-3 text-[#C6A04A]"
+          className="mt-9 flex justify-center items-center gap-3 text-[#D5B66F]"
         >
-          <span className="h-px w-10 bg-[#C6A04A]/50" />
-          <Heart size={16} className="fill-[#C6A04A]/20" />
-          <span className="h-px w-10 bg-[#C6A04A]/50" />
+          <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#D5B66F]" />
+          <Heart size={16} className="text-[#70558F] fill-[#E8B8D0]/65" />
+          <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#D5B66F]" />
         </motion.div>
-
       </div>
     </section>
   );

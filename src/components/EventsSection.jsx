@@ -481,7 +481,6 @@
 
 
 // src/components/EventsSection.jsx
-
 import { motion } from "motion/react";
 import {
   CalendarDays,
@@ -492,23 +491,74 @@ import {
   Heart,
   Sparkles,
   Crown,
+  Sun,
+  Leaf,
+  Music,
+  Gem,
+  Wine,
 } from "lucide-react";
 import { weddingData } from "../config/weddingData";
 
-const eventIcons = {
-  haldi: "🌼",
-  mehendi: "🌿",
-  sangeet: "🎶",
-  wedding: "💍",
-  reception: "🥂",
+const eventIconMap = {
+  haldi: Sun,
+  mehendi: Leaf,
+  sangeet: Music,
+  wedding: Gem,
+  reception: Wine,
 };
 
 const GoldDivider = () => (
   <div className="flex items-center justify-center gap-3">
-    <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#C6A04A]" />
-    <Flower2 size={17} className="text-[#C6A04A]" />
-    <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#C6A04A]" />
+    <span className="h-px w-12 bg-gradient-to-r from-transparent via-[#E9D7A5] to-[#D5B66F]" />
+    <span className="flex h-7 w-7 items-center justify-center rounded-full border border-[#D5B66F]/65 bg-[#F4EFF8]">
+      <Flower2 size={15} className="text-[#70558F]" />
+    </span>
+    <span className="h-px w-12 bg-gradient-to-l from-transparent via-[#E9D7A5] to-[#D5B66F]" />
   </div>
+);
+
+const CornerFloralAccent = () => (
+  <>
+    <svg
+      viewBox="0 0 170 170"
+      className="pointer-events-none absolute -top-2 -left-2 h-28 w-28 opacity-80 sm:h-36 sm:w-36"
+      aria-hidden="true"
+    >
+      <circle cx="34" cy="34" r="38" fill="#E8B8D0" fillOpacity="0.22" />
+      <circle cx="60" cy="28" r="26" fill="#C5B2DA" fillOpacity="0.22" />
+      <path
+        d="M16 16 C46 30 72 52 94 84"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="40" cy="40" r="9.5" fill="#E8B8D0" fillOpacity="0.8" />
+      <circle cx="50" cy="34" r="6.8" fill="#C5B2DA" fillOpacity="0.78" />
+      <circle cx="34" cy="50" r="6.8" fill="#DCAAC3" fillOpacity="0.75" />
+      <circle cx="40" cy="40" r="2.2" fill="#D5B66F" />
+    </svg>
+
+    <svg
+      viewBox="0 0 170 170"
+      className="pointer-events-none absolute -bottom-2 -right-2 h-28 w-28 -scale-x-100 -scale-y-100 opacity-80 sm:h-36 sm:w-36"
+      aria-hidden="true"
+    >
+      <circle cx="34" cy="34" r="38" fill="#C5B2DA" fillOpacity="0.22" />
+      <circle cx="60" cy="28" r="26" fill="#E8B8D0" fillOpacity="0.22" />
+      <path
+        d="M16 16 C46 30 72 52 94 84"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="40" cy="40" r="9.5" fill="#C5B2DA" fillOpacity="0.8" />
+      <circle cx="50" cy="34" r="6.8" fill="#E8B8D0" fillOpacity="0.78" />
+      <circle cx="34" cy="50" r="6.8" fill="#DCAAC3" fillOpacity="0.75" />
+      <circle cx="40" cy="40" r="2.2" fill="#D5B66F" />
+    </svg>
+  </>
 );
 
 const EventsSection = () => {
@@ -517,212 +567,202 @@ const EventsSection = () => {
   return (
     <section
       id="events"
-      className="relative overflow-hidden border-b border-[#C6A04A]/20 bg-[#0D1B16] px-5 py-20 sm:py-24"
+      className="relative overflow-hidden border-y border-[#E6D9EA] bg-gradient-to-b from-[#F4EFF8] via-[#FFFCFA] to-[#EDE5F3]/75 px-4 py-14 sm:px-6 sm:py-20"
     >
-      {/* Background Decorations */}
+      {/* Lavender & Blush Watercolor Backdrop */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#C6A04A]/10 blur-[100px]" />
-        <div className="absolute -right-32 bottom-20 h-80 w-80 rounded-full bg-[#C6A04A]/10 blur-[100px]" />
+        <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#E8B8D0]/22 blur-[110px]" />
+        <div className="absolute -right-32 bottom-20 h-80 w-80 rounded-full bg-[#C5B2DA]/25 blur-[110px]" />
 
-        {/* Subtle heritage pattern */}
         <div
-          className="absolute inset-0 opacity-[0.035]"
+          className="absolute inset-0 opacity-[0.15]"
           style={{
             backgroundImage:
-              "radial-gradient(circle, #E8CA82 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
+              "radial-gradient(circle, #C5B2DA 1.25px, transparent 1.25px)",
+            backgroundSize: "30px 30px",
           }}
         />
+
+        <div className="absolute inset-3 rounded-3xl border border-[#E6D9EA] sm:inset-7" />
+        <div className="absolute inset-5 rounded-2xl border border-[#D5B66F]/30 sm:inset-10" />
+
+        <CornerFloralAccent />
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl">
-
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16 text-center"
+          className="mb-12 text-center"
         >
           <GoldDivider />
 
-          <p className="mb-3 mt-6 text-[11px] font-light uppercase tracking-[0.35em] text-[#E8CA82]/80">
+          <p className="mb-3 mt-6 text-[11px] font-medium uppercase tracking-[0.35em] text-[#B69A54]">
             Save the Dates
           </p>
 
-          <h2 className="font-serif text-3xl tracking-wide text-[#E8CA82] sm:text-5xl">
+          <h2 className="font-serif text-3xl font-medium tracking-wide text-[#70558F] sm:text-5xl">
             Wedding Celebrations
           </h2>
 
-          <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-[#C6A04A] to-transparent" />
+          <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-[#D5B66F] to-transparent" />
 
-          <p className="mx-auto mt-5 max-w-xl text-sm font-light leading-relaxed text-[#F3E8CF]/75 sm:text-base">
+          <p className="mx-auto mt-5 max-w-xl text-sm font-normal leading-relaxed text-[#51465B] sm:text-base">
             From joyful celebrations to the sacred wedding rituals,
             we would love to have you with us at every special moment.
           </p>
 
-          <p className="mt-5 font-serif text-xl tracking-[0.2em] text-[#C6A04A]">
+          <p className="mt-5 font-serif text-xl tracking-[0.2em] text-[#B69A54]">
             ଶୁଭ ମୁହୂର୍ତ୍ତ
           </p>
         </motion.div>
 
         {/* Events Timeline */}
         <div className="relative">
-
-          {/* Timeline Line */}
-          <div className="absolute bottom-8 left-[19px] top-8 w-px bg-gradient-to-b from-[#E8CA82]/70 via-[#C6A04A]/40 to-transparent sm:left-6" />
+          {/* Champagne-Gold & Lilac Vertical Timeline Spine */}
+          <div className="absolute bottom-8 left-[19px] top-8 w-px bg-gradient-to-b from-[#D5B66F] via-[#C5B2DA] to-transparent sm:left-6" />
 
           <div className="space-y-9">
+            {events.map((event, index) => {
+              const EventIcon = eventIconMap[event.id] || Sparkles;
 
-            {events.map((event, index) => (
-              <motion.div
-                key={event.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.7,
-                  delay: index * 0.1,
-                }}
-                className="relative flex gap-4 sm:gap-7"
-              >
+              return (
+                <motion.div
+                  key={event.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.7,
+                    delay: index * 0.1,
+                  }}
+                  className="relative flex gap-4 sm:gap-7"
+                >
+                  {/* Timeline Marker */}
+                  <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#D5B66F] bg-[#FFFFFF] text-[#70558F] shadow-[0_8px_20px_-6px_rgba(112,85,143,0.22),inset_0_0_0_3px_#F4EFF8] sm:h-12 sm:w-12">
+                    <EventIcon size={19} strokeWidth={1.6} />
+                  </div>
 
-                {/* Timeline Marker */}
-                <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#C6A04A]/70 bg-[#14251C] shadow-[0_0_15px_rgba(198,160,74,0.12)] sm:h-12 sm:w-12">
-                  <span className="text-lg">
-                    {eventIcons[event.id] || "✨"}
-                  </span>
-                </div>
+                  {/* Invitation Event Card */}
+                  <div className="relative min-w-0 flex-1 overflow-hidden rounded-2xl border border-[#E6D9EA] bg-gradient-to-br from-[#FFFFFF] via-[#FFFCFA] to-[#F4EFF8] p-5 shadow-[0_16px_38px_-16px_rgba(112,85,143,0.18)] transition-all duration-300 hover:-translate-y-1 hover:border-[#D5B66F] hover:shadow-[0_20px_44px_-16px_rgba(112,85,143,0.24)] sm:p-7">
+                    {/* Delicate Inner Champagne-Gold Frame */}
+                    <div className="pointer-events-none absolute inset-2.5 rounded-xl border border-[#D5B66F]/30" />
 
-                {/* Event Card */}
-                <div className="min-w-0 flex-1 rounded-xl border border-[#C6A04A]/35 bg-gradient-to-br from-[#1C3525]/90 via-[#14251C]/95 to-[#102319]/95 p-5 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#E8CA82]/60 hover:shadow-[0_8px_30px_rgba(198,160,74,0.10)] sm:p-7">
+                    {/* Top-right subtle blush watercolor bloom */}
+                    <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#E8B8D0]/20 blur-2xl" />
 
-                  {/* Inner Border */}
-                  <div className="pointer-events-none absolute" />
-
-                  {/* Event Header */}
-                  <div className="mb-5 flex items-start justify-between gap-3">
-
-                    <div className="min-w-0">
-                      <p className="mb-2 text-[10px] font-light uppercase tracking-[0.25em] text-[#C6A04A]/80">
-                        Celebration {String(index + 1).padStart(2, "0")}
-                      </p>
-
-                      <h3 className="font-serif text-xl leading-snug tracking-wide text-[#E8CA82] sm:text-2xl">
-                        {event.name}
-                      </h3>
-
-                      {event.nameOdia && (
-                        <p className="mt-2 font-serif text-sm text-[#C6A04A]">
-                          {event.nameOdia}
+                    {/* Event Header */}
+                    <div className="relative z-10 mb-5 flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.25em] text-[#B69A54]">
+                          Celebration {String(index + 1).padStart(2, "0")}
                         </p>
-                      )}
-                    </div>
 
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C6A04A]/30 bg-[#C6A04A]/10">
-                      <Sparkles
-                        size={17}
-                        className="text-[#E8CA82]"
-                      />
-                    </div>
-                  </div>
+                        <h3 className="font-serif text-xl font-semibold leading-snug tracking-wide text-[#70558F] sm:text-2xl">
+                          {event.name}
+                        </h3>
 
-                  <div className="mb-5">
-                    <GoldDivider />
-                  </div>
-
-                  {/* Date and Time */}
-                  <div className="mb-5 grid grid-cols-1 gap-3 rounded-lg border border-[#C6A04A]/20 bg-[#0D1B16]/60 p-4 sm:grid-cols-2">
-
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C6A04A]/25 bg-[#C6A04A]/10">
-                        <CalendarDays
-                          size={17}
-                          className="text-[#E8CA82]"
-                        />
+                        {event.nameOdia && (
+                          <p className="mt-1.5 font-serif text-sm text-[#82758A]">
+                            {event.nameOdia}
+                          </p>
+                        )}
                       </div>
+
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D5B66F]/60 bg-[#F4EFF8]">
+                        <Sparkles size={16} className="text-[#A58AC5]" />
+                      </div>
+                    </div>
+
+                    <div className="relative z-10 mb-5">
+                      <GoldDivider />
+                    </div>
+
+                    {/* Date and Time */}
+                    <div className="relative z-10 mb-5 grid grid-cols-1 gap-3 rounded-xl border border-[#E6D9EA] bg-[#FFFFFF]/85 p-4 sm:grid-cols-2">
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D5B66F]/60 bg-[#F4EFF8]">
+                          <CalendarDays size={16} className="text-[#70558F]" />
+                        </div>
+
+                        <div className="min-w-0">
+                          <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#B69A54]">
+                            Date
+                          </p>
+                          <p className="mt-0.5 text-sm font-medium text-[#51465B]">
+                            {event.date}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#D5B66F]/60 bg-[#F4EFF8]">
+                          <Clock size={16} className="text-[#70558F]" />
+                        </div>
+
+                        <div className="min-w-0">
+                          <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#B69A54]">
+                            Time
+                          </p>
+                          <p className="mt-0.5 text-sm font-medium text-[#51465B]">
+                            {event.time}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="relative z-10 mb-5 text-sm font-normal leading-relaxed text-[#51465B]">
+                      {event.description}
+                    </p>
+
+                    {/* Venue */}
+                    <div className="relative z-10 mb-5 flex items-start gap-3">
+                      <MapPin
+                        size={18}
+                        className="mt-0.5 shrink-0 text-[#A58AC5]"
+                      />
 
                       <div className="min-w-0">
-                        <p className="text-[10px] font-light uppercase tracking-[0.2em] text-[#C6A04A]/75">
-                          Date
+                        <p className="text-sm font-semibold tracking-wide text-[#70558F]">
+                          {event.venue}
                         </p>
-                        <p className="mt-1 text-sm font-medium text-[#F3E8CF]">
-                          {event.date}
+
+                        <p className="mt-1 break-words text-xs font-normal leading-relaxed text-[#82758A]">
+                          {event.address}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C6A04A]/25 bg-[#C6A04A]/10">
-                        <Clock
-                          size={17}
-                          className="text-[#E8CA82]"
+                    {/* Google Maps Button */}
+                    {event.mapLink && (
+                      <a
+                        href={event.mapLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative z-10 inline-flex min-h-11 items-center gap-2 rounded-full border border-[#D5B66F] bg-gradient-to-b from-[#FFFFFF] via-[#F4EFF8] to-[#EDE5F3] px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#70558F] shadow-[0_8px_20px_-8px_rgba(112,85,143,0.22),inset_0_0_0_1px_rgba(233,215,165,0.75)] transition-all duration-300 hover:scale-[1.03] hover:border-[#B69A54] active:scale-95"
+                      >
+                        <MapPin size={15} className="text-[#B69A54]" />
+                        Get Directions
+                        <ArrowUpRight
+                          size={15}
+                          className="text-[#B69A54] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                         />
-                      </div>
-
-                      <div className="min-w-0">
-                        <p className="text-[10px] font-light uppercase tracking-[0.2em] text-[#C6A04A]/75">
-                          Time
-                        </p>
-                        <p className="mt-1 text-sm font-medium text-[#F3E8CF]">
-                          {event.time}
-                        </p>
-                      </div>
-                    </div>
-
+                      </a>
+                    )}
                   </div>
-
-                  {/* Description */}
-                  <p className="mb-5 text-sm font-light leading-relaxed text-[#F3E8CF]/75">
-                    {event.description}
-                  </p>
-
-                  {/* Venue */}
-                  <div className="mb-5 flex items-start gap-3">
-                    <MapPin
-                      size={19}
-                      className="mt-0.5 shrink-0 text-[#C6A04A]"
-                    />
-
-                    <div className="min-w-0">
-                      <p className="text-sm font-semibold tracking-wide text-[#E8CA82]">
-                        {event.venue}
-                      </p>
-
-                      <p className="mt-1 break-words text-xs font-light leading-relaxed text-[#F3E8CF]/65">
-                        {event.address}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Google Maps Button */}
-                  {event.mapLink && (
-                    <a
-                      href={event.mapLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex min-h-11 items-center gap-2 rounded-full border border-[#C6A04A]/70 bg-gradient-to-r from-[#C6A04A] via-[#E8CA82] to-[#C6A04A] px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#102319] shadow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(198,160,74,0.25)] active:scale-95"
-                    >
-                      <MapPin size={15} />
-                      Get Directions
-                      <ArrowUpRight
-                        size={15}
-                        className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                      />
-                    </a>
-                  )}
-
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
 
             {events.length === 0 && (
-              <p className="py-8 text-center text-sm text-[#F3E8CF]/60">
+              <p className="py-8 text-center text-sm text-[#82758A]">
                 Wedding celebrations will be announced soon.
               </p>
             )}
-
           </div>
         </div>
 
@@ -735,25 +775,24 @@ const EventsSection = () => {
           className="mt-16 text-center"
         >
           <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#C6A04A]/70" />
-            <Crown size={20} className="text-[#C6A04A]" />
-            <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#C6A04A]/70" />
+            <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#D5B66F]" />
+            <Crown size={20} className="text-[#70558F]" />
+            <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#D5B66F]" />
           </div>
 
           <Heart
             size={22}
-            className="mx-auto mb-4 fill-[#C6A04A]/20 text-[#C6A04A]"
+            className="mx-auto mb-4 fill-[#E8B8D0]/65 text-[#70558F]"
           />
 
-          <p className="font-serif text-lg tracking-wide text-[#F3E8CF] sm:text-xl">
+          <p className="font-serif text-lg tracking-wide text-[#70558F] sm:text-xl">
             Your presence will make our celebrations more special.
           </p>
 
-          <p className="mt-3 text-sm font-light text-[#C6A04A]/80">
+          <p className="mt-2.5 text-sm font-normal text-[#82758A]">
             We look forward to celebrating with you!
           </p>
         </motion.div>
-
       </div>
     </section>
   );

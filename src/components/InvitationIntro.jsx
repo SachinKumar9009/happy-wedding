@@ -224,8 +224,6 @@
 // export default InvitationIntro;
 
 
-
-
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { weddingData } from "../config/weddingData";
@@ -243,15 +241,15 @@ const ResponsiveStyles = () => (
       }
 
       .invitation-card {
-        max-width: 390px !important;
+        max-width: 380px !important;
       }
 
       .invitation-content {
-        padding: 34px 22px 14px !important;
+        padding: 28px 20px 14px !important;
       }
 
       .invitation-ornament {
-        width: 76px !important;
+        width: 82px !important;
       }
 
       .invitation-greeting {
@@ -261,50 +259,50 @@ const ResponsiveStyles = () => (
       }
 
       .invitation-odia {
-        margin-bottom: 10px !important;
+        margin-bottom: 8px !important;
         font-size: 11px !important;
       }
 
       .invitation-title {
-        margin-top: 12px !important;
-        margin-bottom: 10px !important;
+        margin-top: 10px !important;
+        margin-bottom: 8px !important;
       }
 
       .invitation-name {
-        font-size: clamp(28px, 8vw, 34px) !important;
-        line-height: 1.1 !important;
+        font-size: clamp(32px, 8.5vw, 40px) !important;
+        line-height: 1.08 !important;
       }
 
       .invitation-ampersand {
         margin-top: 1px !important;
         margin-bottom: 1px !important;
-        font-size: 25px !important;
+        font-size: 26px !important;
       }
 
       .invitation-date-section {
-        margin-top: 10px !important;
-        margin-bottom: 8px !important;
+        margin-top: 8px !important;
+        margin-bottom: 6px !important;
       }
 
       .invitation-day {
-        margin-bottom: 3px !important;
+        margin-bottom: 2px !important;
         font-size: 11px !important;
       }
 
       .invitation-date {
-        margin-bottom: 10px !important;
+        margin-bottom: 8px !important;
         font-size: 19px !important;
       }
 
       .invitation-open {
-        margin-top: 12px !important;
+        margin-top: 10px !important;
         padding-top: 10px !important;
         padding-bottom: 10px !important;
       }
 
       .invitation-blessing {
         margin-top: 8px !important;
-        font-size: 14px !important;
+        font-size: 15px !important;
       }
 
       .invitation-divider {
@@ -319,11 +317,11 @@ const ResponsiveStyles = () => (
       }
 
       .invitation-name {
-        font-size: 29px !important;
+        font-size: 32px !important;
       }
 
       .invitation-card {
-        max-width: 350px !important;
+        max-width: 344px !important;
       }
     }
 
@@ -334,7 +332,7 @@ const ResponsiveStyles = () => (
       }
 
       .invitation-ornament {
-        width: 60px !important;
+        width: 64px !important;
       }
 
       .invitation-title {
@@ -359,71 +357,277 @@ const ResponsiveStyles = () => (
 );
 
 /* ----------------------------------
-   Gold divider
+   Champagne-gold divider
 ----------------------------------- */
 
 const GoldDivider = () => (
   <div className="invitation-divider flex items-center justify-center gap-3 w-full">
-    <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#C6A04A]" />
+    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#E9D7A5] to-[#D5B66F]" />
 
-    <svg viewBox="0 0 30 24" className="w-7 h-6 shrink-0">
-      <path
-        d="M15 2 L24 12 L15 22 L6 12 Z"
-        fill="none"
-        stroke="#C6A04A"
-        strokeWidth="1.5"
+    <svg viewBox="0 0 36 24" className="w-8 h-6 shrink-0" aria-hidden="true">
+      <circle
+        cx="18"
+        cy="12"
+        r="7.5"
+        fill="#F4EFF8"
+        stroke="#D5B66F"
+        strokeWidth="1.2"
       />
-      <path
-        d="M15 7 L20 12 L15 17 L10 12 Z"
-        fill="#C6A04A"
-      />
+      <circle cx="18" cy="12" r="2.6" fill="#A58AC5" />
+      <circle cx="8" cy="12" r="1.5" fill="#E8B8D0" />
+      <circle cx="28" cy="12" r="1.5" fill="#E8B8D0" />
     </svg>
 
-    <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#C6A04A]" />
+    <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#E9D7A5] to-[#D5B66F]" />
   </div>
 );
 
 /* ----------------------------------
-   Royal ornament
+   Watercolor & gold floral frame emblem
 ----------------------------------- */
 
-const RoyalOrnament = () => (
+const FloralMedallionOrnament = () => (
   <svg
-    viewBox="0 0 160 90"
-    className="invitation-ornament w-24 sm:w-32 mx-auto"
+    viewBox="0 0 180 112"
+    className="invitation-ornament w-28 sm:w-36 mx-auto"
+    aria-hidden="true"
   >
-    <path
-      d="M80 5 C68 27 38 16 24 42 C44 34 53 57 80 73 C107 57 116 34 136 42 C122 16 92 27 80 5Z"
-      stroke="#C6A04A"
-      strokeWidth="1.5"
-      fill="rgba(198,160,74,0.08)"
-    />
+    <defs>
+      <radialGradient id="lavenderBloomWash" cx="50%" cy="50%" r="55%">
+        <stop offset="0%" stopColor="#A58AC5" stopOpacity="0.34" />
+        <stop offset="65%" stopColor="#E8B8D0" stopOpacity="0.22" />
+        <stop offset="100%" stopColor="#F4EFF8" stopOpacity="0" />
+      </radialGradient>
+    </defs>
 
-    <path
-      d="M80 19 Q55 43 80 65 Q105 43 80 19Z"
-      stroke="#E8CA82"
-      strokeWidth="1.5"
+    {/* Soft watercolor wash behind medallion */}
+    <ellipse cx="90" cy="56" rx="74" ry="44" fill="url(#lavenderBloomWash)" />
+
+    {/* Delicate champagne-gold circular frame */}
+    <circle
+      cx="90"
+      cy="54"
+      r="33"
+      fill="#FFFCFA"
+      fillOpacity="0.88"
+      stroke="#D5B66F"
+      strokeWidth="1.35"
+    />
+    <circle
+      cx="90"
+      cy="54"
+      r="28.5"
       fill="none"
+      stroke="#E9D7A5"
+      strokeWidth="0.9"
+      strokeDasharray="2.5 2.5"
     />
 
+    {/* Left botanical sprig & lavender / blush blossoms */}
     <path
-      d="M80 28 Q67 44 80 56 Q93 44 80 28Z"
-      fill="#C6A04A"
-    />
-
-    <path
-      d="M24 42 Q10 25 5 42 Q17 44 28 58 M136 42 Q150 25 155 42 Q143 44 132 58"
-      stroke="#C6A04A"
+      d="M58 64 C41 56 26 42 15 26"
       fill="none"
-      strokeWidth="1.5"
+      stroke="#A58AC5"
+      strokeWidth="1.3"
+      strokeLinecap="round"
     />
+    <ellipse
+      cx="38"
+      cy="48"
+      rx="9"
+      ry="4.2"
+      transform="rotate(-28 38 48)"
+      fill="#C5B2DA"
+      fillOpacity="0.65"
+    />
+    <ellipse
+      cx="28"
+      cy="39"
+      rx="7.5"
+      ry="3.6"
+      transform="rotate(-42 28 39)"
+      fill="#E8B8D0"
+      fillOpacity="0.7"
+    />
+    <circle cx="48" cy="34" r="6" fill="#C5B2DA" fillOpacity="0.75" />
+    <circle cx="48" cy="34" r="2.2" fill="#D5B66F" />
+    <circle cx="33" cy="27" r="5" fill="#E8B8D0" fillOpacity="0.8" />
+    <circle cx="33" cy="27" r="1.8" fill="#D5B66F" />
+
+    {/* Right botanical sprig & lavender / blush blossoms */}
+    <path
+      d="M122 64 C139 56 154 42 165 26"
+      fill="none"
+      stroke="#A58AC5"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+    />
+    <ellipse
+      cx="142"
+      cy="48"
+      rx="9"
+      ry="4.2"
+      transform="rotate(28 142 48)"
+      fill="#C5B2DA"
+      fillOpacity="0.65"
+    />
+    <ellipse
+      cx="152"
+      cy="39"
+      rx="7.5"
+      ry="3.6"
+      transform="rotate(42 152 39)"
+      fill="#E8B8D0"
+      fillOpacity="0.7"
+    />
+    <circle cx="132" cy="34" r="6" fill="#C5B2DA" fillOpacity="0.75" />
+    <circle cx="132" cy="34" r="2.2" fill="#D5B66F" />
+    <circle cx="147" cy="27" r="5" fill="#E8B8D0" fillOpacity="0.8" />
+    <circle cx="147" cy="27" r="1.8" fill="#D5B66F" />
+
+    {/* Center top & bottom floral accents on circular frame */}
+    <circle cx="90" cy="21" r="6.5" fill="#E8B8D0" fillOpacity="0.8" />
+    <circle cx="84.5" cy="22.5" r="4.5" fill="#C5B2DA" fillOpacity="0.75" />
+    <circle cx="95.5" cy="22.5" r="4.5" fill="#C5B2DA" fillOpacity="0.75" />
+    <circle cx="90" cy="21" r="2.2" fill="#D5B66F" />
 
     <path
-      d="M65 75 Q80 86 95 75"
-      stroke="#E8CA82"
+      d="M74 91 Q90 101 106 91"
       fill="none"
+      stroke="#D5B66F"
+      strokeWidth="1.2"
+      strokeLinecap="round"
     />
+    <circle cx="90" cy="87" r="4.2" fill="#A58AC5" fillOpacity="0.7" />
   </svg>
+);
+
+/* ----------------------------------
+   Corner & edge watercolor floral accents
+----------------------------------- */
+
+const CornerFloralAccents = () => (
+  <>
+    {/* Top-left floral cluster */}
+    <svg
+      viewBox="0 0 180 180"
+      className="pointer-events-none absolute -top-2 -left-2 w-28 h-28 sm:w-36 sm:h-36 z-20"
+      aria-hidden="true"
+    >
+      <circle cx="28" cy="28" r="34" fill="#E8B8D0" fillOpacity="0.28" />
+      <circle cx="54" cy="24" r="26" fill="#C5B2DA" fillOpacity="0.28" />
+      <path
+        d="M14 14 C46 28 74 52 96 84"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.35"
+        strokeLinecap="round"
+      />
+      <ellipse
+        cx="56"
+        cy="34"
+        rx="11"
+        ry="5.5"
+        transform="rotate(24 56 34)"
+        fill="#C5B2DA"
+        fillOpacity="0.72"
+      />
+      <ellipse
+        cx="34"
+        cy="58"
+        rx="11"
+        ry="5.5"
+        transform="rotate(62 34 58)"
+        fill="#E8B8D0"
+        fillOpacity="0.75"
+      />
+      <circle cx="38" cy="36" r="9.5" fill="#E8B8D0" fillOpacity="0.82" />
+      <circle cx="46" cy="31" r="7" fill="#DCAAC3" fillOpacity="0.78" />
+      <circle cx="32" cy="44" r="7" fill="#C5B2DA" fillOpacity="0.8" />
+      <circle cx="38" cy="36" r="2.6" fill="#D5B66F" />
+      <circle cx="72" cy="54" r="6.5" fill="#C5B2DA" fillOpacity="0.78" />
+      <circle cx="72" cy="54" r="2" fill="#D5B66F" />
+    </svg>
+
+    {/* Top-right floral cluster */}
+    <svg
+      viewBox="0 0 180 180"
+      className="pointer-events-none absolute -top-2 -right-2 w-28 h-28 sm:w-36 sm:h-36 z-20 -scale-x-100"
+      aria-hidden="true"
+    >
+      <circle cx="28" cy="28" r="34" fill="#C5B2DA" fillOpacity="0.28" />
+      <circle cx="54" cy="24" r="26" fill="#E8B8D0" fillOpacity="0.28" />
+      <path
+        d="M14 14 C46 28 74 52 96 84"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.35"
+        strokeLinecap="round"
+      />
+      <ellipse
+        cx="56"
+        cy="34"
+        rx="11"
+        ry="5.5"
+        transform="rotate(24 56 34)"
+        fill="#C5B2DA"
+        fillOpacity="0.72"
+      />
+      <ellipse
+        cx="34"
+        cy="58"
+        rx="11"
+        ry="5.5"
+        transform="rotate(62 34 58)"
+        fill="#E8B8D0"
+        fillOpacity="0.75"
+      />
+      <circle cx="38" cy="36" r="9.5" fill="#C5B2DA" fillOpacity="0.82" />
+      <circle cx="46" cy="31" r="7" fill="#E8B8D0" fillOpacity="0.78" />
+      <circle cx="32" cy="44" r="7" fill="#DCAAC3" fillOpacity="0.8" />
+      <circle cx="38" cy="36" r="2.6" fill="#D5B66F" />
+      <circle cx="72" cy="54" r="6.5" fill="#E8B8D0" fillOpacity="0.78" />
+      <circle cx="72" cy="54" r="2" fill="#D5B66F" />
+    </svg>
+
+    {/* Bottom-left floral cluster */}
+    <svg
+      viewBox="0 0 160 160"
+      className="pointer-events-none absolute -bottom-2 -left-2 w-24 h-24 sm:w-32 sm:h-32 z-20 -scale-y-100"
+      aria-hidden="true"
+    >
+      <circle cx="26" cy="26" r="30" fill="#C5B2DA" fillOpacity="0.25" />
+      <path
+        d="M14 14 C40 26 64 46 82 72"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="34" cy="34" r="8.5" fill="#C5B2DA" fillOpacity="0.8" />
+      <circle cx="44" cy="30" r="6" fill="#E8B8D0" fillOpacity="0.78" />
+      <circle cx="34" cy="34" r="2.2" fill="#D5B66F" />
+    </svg>
+
+    {/* Bottom-right floral cluster */}
+    <svg
+      viewBox="0 0 160 160"
+      className="pointer-events-none absolute -bottom-2 -right-2 w-24 h-24 sm:w-32 sm:h-32 z-20 -scale-x-100 -scale-y-100"
+      aria-hidden="true"
+    >
+      <circle cx="26" cy="26" r="30" fill="#E8B8D0" fillOpacity="0.25" />
+      <path
+        d="M14 14 C40 26 64 46 82 72"
+        fill="none"
+        stroke="#A58AC5"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+      />
+      <circle cx="34" cy="34" r="8.5" fill="#E8B8D0" fillOpacity="0.8" />
+      <circle cx="44" cy="30" r="6" fill="#C5B2DA" fillOpacity="0.78" />
+      <circle cx="34" cy="34" r="2.2" fill="#D5B66F" />
+    </svg>
+  </>
 );
 
 /* ----------------------------------
@@ -465,38 +669,33 @@ const InvitationIntro = ({ onOpen }) => {
       <AnimatePresence>
         {!isOpen && (
           <motion.main
-            className="fixed inset-0 z-50 overflow-x-hidden overflow-y-auto bg-[#09150F]"
+            className="fixed inset-0 z-50 overflow-x-hidden overflow-y-auto bg-[#FFFCFA] text-[#51465B]"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Palace background */}
-
+            {/* Soft ivory, lavender & blush watercolor backdrop */}
             <div className="fixed inset-0 pointer-events-none">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#203D29_0%,#102319_55%,#08130D_100%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#F4EFF8_0%,#FFFCFA_55%,#FFFFFF_100%)]" />
 
               <div
-                className="absolute inset-0 opacity-[0.09]"
+                className="absolute inset-0 opacity-[0.22]"
                 style={{
                   backgroundImage:
-                    "radial-gradient(circle, transparent 45%, #C6A04A 47%, transparent 49%)",
-                  backgroundSize: "54px 54px",
+                    "radial-gradient(circle at 20% 20%, rgba(197, 178, 218, 0.35) 0%, transparent 45%), radial-gradient(circle at 80% 25%, rgba(232, 184, 208, 0.35) 0%, transparent 45%), radial-gradient(circle at 50% 85%, rgba(237, 229, 243, 0.5) 0%, transparent 55%)",
                 }}
               />
 
-              <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[#C6A04A]/10 blur-[100px]" />
+              <div className="absolute -top-28 left-1/2 -translate-x-1/2 w-[28rem] h-[28rem] rounded-full bg-[#E8B8D0]/20 blur-[110px]" />
             </div>
 
-            {/* Royal side curtains */}
+            {/* Delicate champagne-gold & lavender side ribbons */}
+            <div className="fixed inset-y-0 left-0 w-2 sm:w-5 pointer-events-none bg-gradient-to-r from-[#EDE5F3]/80 via-[#E9D7A5]/25 to-transparent" />
 
-            <div className="fixed inset-y-0 left-0 w-3 sm:w-8 pointer-events-none bg-gradient-to-r from-[#29090E] via-[#641E26] to-transparent opacity-80" />
-
-            <div className="fixed inset-y-0 right-0 w-3 sm:w-8 pointer-events-none bg-gradient-to-l from-[#29090E] via-[#641E26] to-transparent opacity-80" />
+            <div className="fixed inset-y-0 right-0 w-2 sm:w-5 pointer-events-none bg-gradient-to-l from-[#EDE5F3]/80 via-[#E9D7A5]/25 to-transparent" />
 
             {/* Main responsive layout */}
-
             <div className="invitation-layout relative z-10 min-h-[100svh] flex items-center justify-center px-4 py-5 sm:py-8">
-
               <motion.section
                 className="invitation-card relative w-full max-w-[440px] mx-auto"
                 initial={{
@@ -519,61 +718,54 @@ const InvitationIntro = ({ onOpen }) => {
                   ease: "easeOut",
                 }}
               >
-                {/* Outer gold frame */}
+                <CornerFloralAccents />
 
-                <div className="relative p-[3px] rounded-t-[46%] rounded-b-lg bg-gradient-to-b from-[#E8CA82] via-[#98702F] to-[#C6A04A] shadow-[0_0_35px_rgba(198,160,74,0.18)]">
-
-                  {/* Inner invitation */}
-
-                  <div className="relative overflow-hidden rounded-t-[46%] rounded-b-md border border-[#E8CA82]/50 bg-[#102319]">
-
-                    {/* Inner ornamental background */}
-
+                {/* Champagne-gold & soft border outer frame */}
+                <div className="relative p-[2px] rounded-t-[46%] rounded-b-2xl bg-gradient-to-b from-[#E9D7A5] via-[#D5B66F] to-[#E6D9EA] shadow-[0_20px_50px_-18px_rgba(112,85,143,0.22)]">
+                  {/* Inner ivory & lavender invitation card */}
+                  <div className="relative overflow-hidden rounded-t-[46%] rounded-b-xl border border-[#E6D9EA] bg-gradient-to-b from-[#FFFFFF] via-[#FFFCFA] to-[#F4EFF8]">
+                    {/* Inner delicate borders */}
                     <div className="absolute inset-0 pointer-events-none">
-                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#29432D_0%,transparent_65%)]" />
+                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#EDE5F3_0%,transparent_65%)] opacity-70" />
 
-                      <div className="absolute inset-3 border border-[#C6A04A]/20 rounded-t-[46%] rounded-b-sm" />
+                      <div className="absolute inset-3 border border-[#D5B66F]/35 rounded-t-[46%] rounded-b-lg" />
 
-                      <div className="absolute inset-5 border border-[#C6A04A]/10 rounded-t-[46%] rounded-b-sm" />
+                      <div className="absolute inset-5 border border-[#E6D9EA] rounded-t-[46%] rounded-b-lg" />
                     </div>
 
                     {/* Decorative arch top */}
-
                     <div className="absolute inset-x-0 top-0 h-36 sm:h-44 pointer-events-none">
                       <svg
                         viewBox="0 0 440 190"
                         className="w-full h-full"
                         preserveAspectRatio="none"
+                        aria-hidden="true"
                       >
                         <path
                           d="M12 190 Q12 8 220 5 Q428 8 428 190"
                           fill="none"
-                          stroke="#C6A04A"
-                          strokeWidth="1.4"
+                          stroke="#D5B66F"
+                          strokeWidth="1.25"
+                          strokeOpacity="0.8"
                         />
 
                         <path
                           d="M23 190 Q23 20 220 17 Q417 20 417 190"
                           fill="none"
-                          stroke="#C6A04A"
-                          strokeOpacity=".35"
+                          stroke="#E9D7A5"
+                          strokeOpacity="0.7"
                           strokeWidth="1"
                         />
                       </svg>
                     </div>
 
-                    {/* Side ornamental accents */}
-
-                    <div className="absolute left-3 top-[30%] w-2 h-2 rotate-45 border border-[#C6A04A] opacity-70" />
-
-                    <div className="absolute right-3 top-[30%] w-2 h-2 rotate-45 border border-[#C6A04A] opacity-70" />
+                    {/* Side floral/gold accents */}
+                    <div className="hidden sm:block absolute left-3.5 top-[32%] w-2 h-2 rounded-full bg-[#E8B8D0] border border-[#D5B66F]" />
+                    <div className="hidden sm:block absolute right-3.5 top-[32%] w-2 h-2 rounded-full bg-[#C5B2DA] border border-[#D5B66F]" />
 
                     {/* Invitation content */}
-
-                    <div className="invitation-content relative z-10 flex flex-col items-center text-center px-6 sm:px-12 pt-16 sm:pt-20 pb-7 sm:pb-9">
-
-                      {/* Royal emblem */}
-
+                    <div className="invitation-content relative z-10 flex flex-col items-center text-center px-6 sm:px-12 pt-14 sm:pt-18 pb-7 sm:pb-9">
+                      {/* Circular floral medallion emblem */}
                       <motion.div
                         animate={{ y: [0, -3, 0] }}
                         transition={{
@@ -582,31 +774,28 @@ const InvitationIntro = ({ onOpen }) => {
                           ease: "easeInOut",
                         }}
                       >
-                        <RoyalOrnament />
+                        <FloralMedallionOrnament />
                       </motion.div>
 
-                      {/* Ganesh greeting */}
-
-                      <p className="invitation-greeting font-serif text-xl sm:text-2xl text-[#E8CA82] mt-1 mb-1">
+                      {/* Greeting */}
+                      <p className="invitation-greeting font-serif text-xl sm:text-2xl text-[#70558F] mt-1 mb-0.5">
                         ॐ
                       </p>
 
-                      <p className="invitation-odia text-[#E8CA82] text-xs sm:text-sm tracking-wider mb-5">
+                      <p className="invitation-odia text-[#82758A] text-xs sm:text-sm tracking-wider mb-5">
                         ଓଁ ଶ୍ରୀ ଶ୍ରୀ ଗଣେଶାୟ ନମଃ
                       </p>
 
                       <GoldDivider />
 
                       {/* Invitation heading */}
-
-                      <p className="invitation-title text-[#F3E8CF] text-[11px] sm:text-xs tracking-[0.35em] uppercase mt-6 mb-5">
+                      <p className="invitation-title text-[#82758A] text-[11px] sm:text-xs font-medium tracking-[0.32em] uppercase mt-5 mb-4">
                         You Are Invited
                       </p>
 
                       {/* Groom */}
-
                       <motion.h1
-                        className="invitation-name font-serif text-[clamp(2.2rem,9vw,3.6rem)] text-[#E8CA82] leading-tight tracking-wide break-words max-w-full"
+                        className="invitation-name font-serif font-medium text-[clamp(2.35rem,9vw,3.75rem)] text-[#70558F] leading-tight tracking-wide break-words max-w-full"
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
@@ -615,21 +804,19 @@ const InvitationIntro = ({ onOpen }) => {
                       </motion.h1>
 
                       {/* Ampersand */}
-
                       <div className="flex items-center justify-center gap-3 w-full max-w-[230px] my-2">
-                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#C6A04A]" />
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#D5B66F]" />
 
-                        <span className="invitation-ampersand font-serif italic text-3xl text-[#E8CA82]">
+                        <span className="invitation-ampersand font-serif italic text-3xl text-[#B69A54]">
                           &
                         </span>
 
-                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#C6A04A]" />
+                        <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#D5B66F]" />
                       </div>
 
                       {/* Bride */}
-
                       <motion.h1
-                        className="invitation-name font-serif text-[clamp(2.2rem,9vw,3.6rem)] text-[#E8CA82] leading-tight tracking-wide break-words max-w-full"
+                        className="invitation-name font-serif font-medium text-[clamp(2.35rem,9vw,3.75rem)] text-[#70558F] leading-tight tracking-wide break-words max-w-full"
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
@@ -638,32 +825,30 @@ const InvitationIntro = ({ onOpen }) => {
                       </motion.h1>
 
                       {/* Wedding date */}
-
-                      <div className="invitation-date-section w-full mt-6 mb-4">
+                      <div className="invitation-date-section w-full mt-5 mb-4">
                         <GoldDivider />
                       </div>
 
-                      <p className="invitation-day text-[#F3E8CF] text-xs sm:text-sm tracking-[0.3em] uppercase mb-2">
+                      <p className="invitation-day text-[#82758A] text-xs sm:text-sm font-medium tracking-[0.28em] uppercase mb-1.5">
                         {day}
                       </p>
 
-                      <p className="invitation-date font-serif text-lg sm:text-2xl text-[#E8CA82] tracking-wider mb-5">
+                      <p className="invitation-date font-serif font-semibold text-lg sm:text-2xl text-[#70558F] tracking-wider mb-5">
                         {displayDate}
                       </p>
 
                       <GoldDivider />
 
                       {/* Open invitation button */}
-
                       <motion.button
                         type="button"
                         onClick={handleOpen}
-                        whileHover={{ scale: 1.035 }}
+                        whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.96 }}
-                        className="invitation-open relative overflow-hidden mt-6 w-full max-w-[290px] rounded-full border-2 border-[#E8CA82] bg-gradient-to-b from-[#F3DEA5] via-[#C6A04A] to-[#9A702D] px-5 py-3.5 text-[#241708] shadow-[0_5px_20px_rgba(198,160,74,0.2)]"
+                        className="invitation-open relative overflow-hidden mt-6 w-full max-w-[290px] rounded-full border border-[#D5B66F] bg-gradient-to-b from-[#FFFFFF] via-[#F4EFF8] to-[#EDE5F3] px-5 py-3.5 text-[#70558F] shadow-[0_8px_24px_-6px_rgba(112,85,143,0.22),inset_0_0_0_1px_rgba(233,215,165,0.75)]"
                       >
                         <motion.span
-                          className="absolute inset-y-0 w-1/4 -skew-x-12 bg-white/30"
+                          className="absolute inset-y-0 w-1/4 -skew-x-12 bg-gradient-to-r from-transparent via-[#E9D7A5]/55 to-transparent"
                           animate={{
                             x: ["-150%", "500%"],
                           }}
@@ -674,29 +859,24 @@ const InvitationIntro = ({ onOpen }) => {
                           }}
                         />
 
-                        <span className="relative z-10 font-serif font-bold text-xs sm:text-sm tracking-[0.18em] uppercase">
+                        <span className="relative z-10 font-serif font-semibold text-xs sm:text-sm tracking-[0.2em] uppercase text-[#70558F]">
                           Open Invitation
                         </span>
                       </motion.button>
 
                       {/* Odia blessing */}
-
-                      <p className="invitation-blessing mt-5 text-[#E8CA82] text-base sm:text-lg font-serif tracking-widest">
+                      <p className="invitation-blessing mt-5 text-[#B69A54] text-base sm:text-lg font-serif tracking-widest">
                         ଶୁଭ ବିବାହ
                       </p>
 
                       {/* Bottom ornament */}
-
-                      <div className="mt-2 w-16 h-px bg-gradient-to-r from-transparent via-[#C6A04A] to-transparent" />
-
+                      <div className="mt-2 w-16 h-px bg-gradient-to-r from-transparent via-[#D5B66F] to-transparent" />
                     </div>
                   </div>
                 </div>
 
-                {/* Gold bottom platform */}
-
-                <div className="h-[3px] mx-5 bg-gradient-to-r from-transparent via-[#E8CA82] to-transparent" />
-
+                {/* Champagne-gold bottom trim */}
+                <div className="h-[2px] mx-6 bg-gradient-to-r from-transparent via-[#D5B66F] to-transparent" />
               </motion.section>
             </div>
           </motion.main>
